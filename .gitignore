@@ -1,2 +1,3 @@
-bundle/*
+bundle/*/.git
 .netrwhist
+tags

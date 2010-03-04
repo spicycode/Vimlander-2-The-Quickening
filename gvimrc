@@ -1,5 +1,5 @@
 " Set the guifont
-  set guifont=AnonymousPro:h16
+  set guifont=Monaco:h14
 
 " fullscreen maximizes vertically AND horizontally
   set fuoptions=maxvert,maxhorz
@@ -111,33 +111,12 @@ nmap <D-[> <<
 vmap <D-[> <<
 imap <D-[> <C-O><<
 
-" NERDCommenter
-let NERDDefaultNesting = 0
-let NERDRemoveExtraSpaces = 1
-let NERDSpaceDelims = 1
-
 " bind command-/ to toggle comment
 " requires NERD Commenter to be installed: http://www.vim.org/scripts/script.php?script_id=1218
 nmap <D-/> ,c<Space>
 vmap <D-/> ,c<Space>
 imap <D-/> <C-O>,c<Space>
 
-" NERDTree 
-
-" Enable nice colors
-let NERDChristmasTree = 1
-
-" Make it easy to see where we are
-let NERDTreeHighlightCursorline = 1
-
-" Make bookmarks visible
-let NERDTreeShowBookmarks = 1
-
-" Show hidden files
-let NERDTreeShowHidden = 1
-" Don't hijack NETRW
-let NERDTreeHijackNetrw = 0
-let NERDTreeIgnore=['\.$', '\~$']
 
 " Make F2 open NERDTree
 nmap <F2> :NERDTreeToggle<CR>
