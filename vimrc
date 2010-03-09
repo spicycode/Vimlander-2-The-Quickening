@@ -21,7 +21,7 @@ set autoread
 " COLOR SUPPORT
 
 " Explicitly set 256 color support
-set t_Co=256
+" set t_Co=256
 
 colorscheme vividchalk " github256 
 
