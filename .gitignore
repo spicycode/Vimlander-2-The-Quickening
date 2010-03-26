@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-bundle/*/.git
-.netrwhist
-tags
-=======
 .DS_Store
 .netrwhist
->>>>>>> 93f8bc991636592243eb2fdb035422ece79930a9
+tags

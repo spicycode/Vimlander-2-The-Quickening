@@ -72,7 +72,7 @@ nnoremap Y y$
 " CUSTOM PLUGINS
 
 " Use neocomplcache. 
-let g:NeoComplCache_EnableAtStartup = 1 
+let g:NeoComplCache_EnableAtStartup = 1
 
 " FuzzyFinder Path Splitting (ala textmate)
 let g:fuf_splitPathMatching = 1
