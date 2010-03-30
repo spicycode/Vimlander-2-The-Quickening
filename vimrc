@@ -179,6 +179,15 @@ let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore=['\.$', '\~$']
 
 
+" RubyTest CONFIG
+let g:rubytest_cmd_spec = "ruby -Ilib -Ispec %p" 
+let g:rubytest_cmd_example = "ruby -Ilib -Ispec %p"
+let g:rubytest_cmd_feature = "cucumber %p" 
+let g:rubytest_cmd_story = "cucumber %p -n '%c'" 
+let g:rubytest_in_quickfix = 1 
+map <Leader>\ <Plug>RubyTestRun " change from <Leader>t to <Leader>\ 
+
+
 " AUTOCOMMANDS
 
 function! CustomClojureSettings()
