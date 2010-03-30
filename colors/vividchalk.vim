@@ -96,14 +96,15 @@ if &background == "light" || has("gui_running")
 else
     hi Normal guibg=Black ctermbg=NONE
 endif
-highlight StatusLine    guifg=Black   guibg=#aabbee gui=bold ctermfg=Black ctermbg=White  cterm=bold
-highlight StatusLineNC  guifg=#444444 guibg=#aaaaaa gui=none ctermfg=Black ctermbg=Grey   cterm=none
+highlight StatusLine    guifg=#dde6e6  guibg=#565656 gui=bold ctermfg=Black ctermbg=White  cterm=bold
+highlight StatusLineNC  guifg=#565656  guibg=#000000 gui=none ctermfg=Black ctermbg=Grey   cterm=none
 "if &t_Co == 256
     "highlight StatusLine ctermbg=117
 "else
     "highlight StatusLine ctermbg=43
 "endif
-highlight WildMenu      guifg=Black   guibg=#ffff00 gui=bold ctermfg=Black ctermbg=Yellow cterm=bold
+highlight WildMenu      guifg=Black guibg=#bcbcbc gui=bold ctermfg=Black ctermbg=Yellow cterm=bold
+highlight VertSplit     guifg=#616161 guibg=#000000 gui=bold ctermfg=Black ctermbg=White  cterm=bold
 highlight Cursor        guifg=Black guibg=White ctermfg=Black ctermbg=White
 highlight CursorLine    guibg=#333333 guifg=NONE
 highlight CursorColumn  guibg=#333333 guifg=NONE
@@ -146,12 +147,6 @@ call s:hibg("TabLineFill","#808080","Grey",83)
 
 hi Type gui=none
 hi Statement gui=none
-if !has("gui_mac")
-    " Mac GUI degrades italics to ugly underlining.
-    hi Comment gui=italic
-    hi railsUserClass  gui=italic
-    hi railsUserMethod gui=italic
-endif
 hi Identifier cterm=none
 " Commented numbers at the end are *old* 256 color values
 "highlight PreProc       guifg=#EDF8F9
@@ -161,7 +156,7 @@ call s:hifg("Constant"       ,"#339999","DarkCyan",21) " 30
 call s:hifg("rubyNumber"     ,"#CCFF33","Yellow",60) " 190
 call s:hifg("String"         ,"#66FF00","LightGreen",44,82) " 82
 call s:hifg("Identifier"     ,"#FFCC00","Yellow",72) " 220
-call s:hifg("Statement"      ,"#FF6600","Brown",68) " 202
+call s:hifg("Statement"      ,"#ff791f","Brown",68) " 202
 call s:hifg("PreProc"        ,"#AAFFFF","LightCyan",47) " 213
 call s:hifg("railsUserMethod","#AACCFF","LightCyan",27)
 call s:hifg("Type"           ,"#AAAA77","Grey",57) " 101

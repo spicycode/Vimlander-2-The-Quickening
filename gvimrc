@@ -1,5 +1,7 @@
 " Set the guifont
-  set guifont=Monaco:h14
+  set guifont=Monaco:h12
+
+  set antialias
 
 " fullscreen maximizes vertically AND horizontally
   set fuoptions=maxvert,maxhorz
