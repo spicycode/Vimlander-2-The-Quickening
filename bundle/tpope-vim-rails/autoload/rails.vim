@@ -6,7 +6,7 @@
 if exists('g:autoloaded_rails') || &cp
   finish
 endif
-let g:autoloaded_rails = '4.1'
+let g:autoloaded_rails = '4.2'
 
 let s:cpo_save = &cpo
 set cpo&vim
@@ -236,6 +236,9 @@ function! s:readable_define_pattern() dict abort
   if self.name() =~# '/schema\.rb$'
     let define .= "\\\|^\\s*create_table\\s\\+[:'\"]"
   endif
+  if self.type_name('test')
+    let define .= '\|^\s*test\s*[''"]'
+  endif
   return define
 endfunction
 
@@ -248,9 +251,13 @@ function! s:lastmethodline(start)
 endfunction
 
 function! s:readable_last_method(start) dict abort
-  let line = self.last_method_line(a:start)
-  if line
-    return s:sub(matchstr(self.getline(line),'\%('.self.define_pattern().'\)\zs\h\%(\k\|[:.]\)*[?!=]\='),':$','')
+  let lnum = self.last_method_line(a:start)
+  let line = self.getline(lnum)
+  if line =~# '^\s*test\s*\([''"]\).*\1'
+    let string = matchstr(line,'^\s*\w\+\s*\([''"]\)\zs.*\ze\1')
+    return 'test_'.s:gsub(string,' +','_')
+  elseif lnum
+    return s:sub(matchstr(lnum,'\%('.self.define_pattern().'\)\zs\h\%(\k\|[:.]\)*[?!=]\='),':$','')
   else
     return ""
   endif
@@ -707,7 +714,7 @@ function! s:readable_calculate_file_type() dict abort
     let r = "task"
   elseif f =~ '\<log/.*\.log$'
     let r = "log"
-  elseif e == "css" || e == "sass"
+  elseif e == "css" || e == "sass" || e == "less"
     let r = "stylesheet-".e
   elseif e == "js"
     let r = "javascript"
@@ -762,7 +769,8 @@ function! s:app_has(feature) dict
         \'test': 'test/',
         \'spec': 'spec/',
         \'cucumber': 'features/',
-        \'sass': 'public/stylesheets/sass/'}
+        \'sass': 'public/stylesheets/sass/',
+        \'lesscss': 'app/stylesheets/'}
   if self.cache.needs('features')
     call self.cache.set('features',{})
   endif
@@ -1312,7 +1320,7 @@ function! s:initOpenURL()
 endfunction
 
 function! s:scanlineforuris(line)
-  let url = matchstr(a:line,"\\v\\C%(%(GET|PUT|POST|DELETE)\\s+|\w+:/)/[^ \n\r\t<>\"]*[^] .,;\n\r\t<>\":]")
+  let url = matchstr(a:line,"\\v\\C%(%(GET|PUT|POST|DELETE)\\s+|\\w+://[^/]*)/[^ \n\r\t<>\"]*[^] .,;\n\r\t<>\":]")
   if url =~ '\C^\u\+\s\+'
     let method = matchstr(url,'^\u\+')
     let url = matchstr(url,'\s\+\zs.*')
@@ -1346,6 +1354,8 @@ function! s:readable_preview_urls(lnum) dict abort
     let urls = urls + [s:sub(s:sub(self.name(),'^public/stylesheets/sass/','/stylesheets/'),'\.sass$','.css')]
   elseif self.name() =~ '^public/'
     let urls = urls + [s:sub(self.name(),'^public','')]
+  elseif self.name() =~ '^app/stylesheets/'
+    let urls = urls + [s:sub(s:sub(self.name(),'^app/stylesheets/','/stylesheets/'),'\.less$','.css')]
   elseif self.controller_name() != '' && self.controller_name() != 'application'
     if self.type_name('controller') && self.last_method(a:lnum) != ''
       let urls += ['/'.self.controller_name().'/'.self.last_method(a:lnum).'/']
@@ -2613,6 +2623,8 @@ function! s:stylesheetEdit(cmd,...)
   let name = a:0 ? a:1 : s:controller(1)
   if rails#app().has('sass') && rails#app().has_file('public/stylesheets/sass/'.name.'.sass')
     return s:EditSimpleRb(a:cmd,"stylesheet",name,"public/stylesheets/sass/",".sass",1)
+  elseif rails#app().has('lesscss') && rails#app().has_file('app/stylesheets/'.name.'.less')
+    return s:EditSimpleRb(a:cmd,"stylesheet",name,"app/stylesheets/",".less",1)
   else
     return s:EditSimpleRb(a:cmd,"stylesheet",name,"public/stylesheets/",".css",1)
   endif
@@ -4469,6 +4481,8 @@ function! RailsBufInit(path)
     setlocal filetype=haml
   elseif &ft =~ '^\%(sass\|conf\)\=$' && expand("%:e") == "sass"
     setlocal filetype=sass
+  elseif &ft =~ '^\%(lesscss\|conf\)\=$' && expand("%:e") == "less"
+    setlocal filetype=lesscss
   elseif &ft =~ '^\%(dryml\)\=$' && expand("%:e") == "dryml"
     setlocal filetype=dryml
   elseif (&ft == "" || v:version < 701) && expand("%:e") =~ '^\%(rhtml\|erb\)$'
@@ -4573,7 +4587,7 @@ function! s:BufSettings()
   call self.setvar('&includeexpr','RailsIncludeexpr()')
   call self.setvar('&suffixesadd', ".rb,.".s:gsub(s:view_types,',',',.').",.css,.js,.yml,.csv,.rake,.sql,.html,.xml")
   let ft = self.getvar('&filetype')
-  if ft =~ '^\%(e\=ruby\|[yh]aml\|javascript\|css\|sass\)$'
+  if ft =~ '^\%(e\=ruby\|[yh]aml\|javascript\|css\|sass\|lesscss\)$'
     call self.setvar('&shiftwidth',2)
     call self.setvar('&softtabstop',2)
     call self.setvar('&expandtab',1)
