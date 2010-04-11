@@ -37,8 +37,7 @@ set softtabstop=2
 set shiftwidth=2
 
 " line numbers
-" set number 
-set nonumber " trying no numbers for  day
+set number 
 set numberwidth=3
 
 
