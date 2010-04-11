@@ -738,6 +738,7 @@ function s:expandAbbrevMap(pattern, abbrevMap)
       let result += map(copy(subs), 'substitute(expr, pattern, escape(v:val, ''\''), "g")')
     endfor
   endfor
+   let result += ['**/' . substitute(a:pattern, '\/', '/**/', 'g')]
   return fuf#unique(result)
 endfunction
 

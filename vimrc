@@ -74,6 +74,10 @@ nnoremap Y y$
 " FuzzyFinder Path Splitting (ala textmate)
 let g:fuf_splitPathMatching = 1
 
+" Write stats to file
+let g:fuf_infoFile = '~/.vim-fuf'
+let g:fuf_learningLimit = 500
+
 " CUSTOM FUNCTIONS
 
 " Add RebuildTagsFile function/command
