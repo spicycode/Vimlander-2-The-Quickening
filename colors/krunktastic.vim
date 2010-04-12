@@ -1,10 +1,8 @@
 " Vim color scheme
 " Name:         krunktastic.vim
-" Author:       Tim Pope <vimNOSPAM@tpope.info>
-" GetLatestVimScripts: 1891 1 :AutoInstall: krunktastic.vim
-" $Id: krunktastic.vim,v 1.8 2007-07-11 18:50:16 tpope Exp $
-
-" Based on the Vibrank Ink theme for TextMate
+" Current Author:       Chad Humphries
+" Original Author:       Tim Pope <vimNOSPAM@tpope.info>
+" Based on the VividChalk.vim theme by Tim Pope
 " Distributable under the same terms as Vim itself (see :help license)
 
 if has("gui_running")
@@ -131,11 +129,9 @@ call s:hibg("Folded"    ,"#110077","DarkBlue",17)
 call s:hifg("Folded"    ,"#aaddee","LightCyan",63)
 highlight FoldColumn    none
 high link FoldColumn    Folded
-highlight Pmenu         guifg=White ctermfg=White gui=bold cterm=bold
-highlight PmenuSel      guifg=White ctermfg=White gui=bold cterm=bold
-call s:hibg("Pmenu"     ,"#000099","Blue",18)
-call s:hibg("PmenuSel"  ,"#5555ff","DarkCyan",39)
-highlight PmenuSbar     guibg=Grey ctermbg=Grey
+highlight Pmenu         guifg=#e5e5e5 guibg=#565656 ctermfg=Black ctermbg=Yellow cterm=bold
+highlight PmenuSel      guifg=#565656 guibg=#bcbcbc gui=bold ctermfg=Black ctermbg=Yellow cterm=bold
+highlight PmenuSbar     guibg=White ctermbg=White
 highlight PmenuThumb    guibg=White ctermbg=White
 highlight TabLine       gui=underline cterm=underline
 call s:hifg("TabLine"   ,"#bbbbbb","LightGrey",85)
