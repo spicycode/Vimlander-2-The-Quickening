@@ -1,8 +1,8 @@
 " Vim color scheme
-" Name:         vividchalk.vim
+" Name:         krunktastic.vim
 " Author:       Tim Pope <vimNOSPAM@tpope.info>
-" GetLatestVimScripts: 1891 1 :AutoInstall: vividchalk.vim
-" $Id: vividchalk.vim,v 1.8 2007-07-11 18:50:16 tpope Exp $
+" GetLatestVimScripts: 1891 1 :AutoInstall: krunktastic.vim
+" $Id: krunktastic.vim,v 1.8 2007-07-11 18:50:16 tpope Exp $
 
 " Based on the Vibrank Ink theme for TextMate
 " Distributable under the same terms as Vim itself (see :help license)
@@ -15,7 +15,7 @@ if exists("syntax_on")
    syntax reset
 endif
 
-let colors_name = "vividchalk"
+let colors_name = "krunktastic"
 
 " First two functions adapted from inkpot.vim
 

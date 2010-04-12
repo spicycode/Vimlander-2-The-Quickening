@@ -23,7 +23,7 @@ set autoread
 " Explicitly set 256 color support
 " set t_Co=256
 
-colorscheme vividchalk " github256 
+colorscheme krunktastic " github256 
 
 " TEXT SETTINGS
 
