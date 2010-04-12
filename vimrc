@@ -182,19 +182,8 @@ let NERDTreeShowHidden = 1
 let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore=['\.$', '\~$']
 
-
-" RubyTest CONFIG
-let g:rubytest_cmd_spec = "ruby -Ilib -Ispec %p" 
-let g:rubytest_cmd_example = "ruby -Ilib -Ispec %p"
-let g:rubytest_cmd_feature = "cucumber %p" 
-let g:rubytest_cmd_story = "cucumber %p -n '%c'" 
-let g:rubytest_in_quickfix = 1 
-map <Leader>\ <Plug>RubyTestRun " change from <Leader>t to <Leader>\ 
-
-" COMMAND-T
-let g:CommandTNeverShowDotFiles = 1
-let g:CommandTMatchWindowAtTop = 1
-let g:CommandTMaxHeight = 15
+" NeoComplCache
+let g:NeoComplCache_EnableAtStartup=1
 
 
 " AUTOCOMMANDS
