@@ -64,6 +64,7 @@
 macmenu &File.New\ Tab key=<nop>
 
 " Change Apple+T to TextMate Like Fuzzy Finder
+" nnoremap <D-t> :PeepOpen<CR>
 nnoremap <D-t> :FufFile<CR>
 
 " Unmap Apple+Shift+T so we can...
