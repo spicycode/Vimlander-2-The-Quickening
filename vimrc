@@ -18,6 +18,10 @@ set vb t_vb=
 " Set to auto read when a file is changed from the outside
 set autoread
 
+set nobackup
+set nowritebackup
+set noswapfile
+
 " COLOR SUPPORT
 
 " Explicitly set 256 color support
@@ -183,7 +187,7 @@ let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore=['\.$', '\~$']
 
 " NeoComplCache
-let g:NeoComplCache_EnableAtStartup=1
+let g:NeoComplCache_EnableAtStartup=0
 
 
 " AUTOCOMMANDS
