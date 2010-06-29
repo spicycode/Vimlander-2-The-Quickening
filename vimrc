@@ -175,10 +175,6 @@ let NERDTreeShowHidden = 1
 let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore=['\.$', '\~$']
 
-" NeoComplCache
-let g:NeoComplCache_EnableAtStartup=1
-let g:NeoComplCache_EnableQuickMatch=0
-
 
 " AUTOCOMMANDS
 

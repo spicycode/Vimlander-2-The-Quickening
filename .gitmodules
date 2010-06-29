@@ -37,6 +37,3 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/neocomplcache"]
-	path = bundle/neocomplcache
-	url = git://github.com/Shougo/neocomplcache.git
