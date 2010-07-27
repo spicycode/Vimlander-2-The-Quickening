@@ -1,6 +1,5 @@
 " Set the guifont
   set guifont=Monaco:h13
-
   set antialias
 
 " fullscreen maximizes vertically AND horizontally
@@ -19,8 +18,8 @@
 " Scrollbar is always off.
   set guioptions-=rL
 
-" Enable gui tab labels
-  set guioptions+=e
+" Console style tab labels
+  set guioptions-=e
 
 " Don't highlight search result.
   set nohlsearch
@@ -61,40 +60,40 @@
   imap <D-[> <C-O><<
 
 " Unmap Apple+T so we can...
-macmenu &File.New\ Tab key=<nop>
+  macmenu &File.New\ Tab key=<nop>
 
 " Change Apple+T to TextMate Like Fuzzy Finder
 " nnoremap <D-t> :PeepOpen<CR>
- nnoremap <D-t> :FufFile<CR>
+  nnoremap <D-t> :FufFile<CR>
 
 " Unmap Apple+Shift+T so we can...
-macmenu &File.Open\ Tab\.\.\. key=<nop>
+  macmenu &File.Open\ Tab\.\.\. key=<nop>
 
 " Change Apple+Shift+T to TextMate Like Fuzzy Finder
-nnoremap <D-T> :FufTag!<CR>
+  nnoremap <D-T> :FufTag!<CR>
 
 " Unmap Apple+b so we can...
-macmenu &Tools.Make key=<nop>
+  macmenu &Tools.Make key=<nop>
 
 " Change Apple+b to Emacseque buffer browser
-map <D-b> :FufBuffer!<CR>
-imap <D-b> :FufBuffer!<CR>
+  map <D-b> :FufBuffer!<CR>
+  imap <D-b> :FufBuffer!<CR>
 
 " Unmap Apple+S to remap to Esc, then :w<CR>
-macmenu &File.Save key=<nop>
-imap <D-s> <Esc>:w<CR>
-map <D-s> :w<CR>
+  macmenu &File.Save key=<nop>
+  imap <D-s> <Esc>:w<CR>
+  map <D-s> :w<CR>
 
 " bind command-/ to toggle comment
 " requires NERD Commenter to be installed: http://www.vim.org/scripts/script.php?script_id=1218
-nmap <D-/> ,c<Space>
-vmap <D-/> ,c<Space>
-imap <D-/> <C-O>,c<Space>
+  nmap <D-/> ,c<Space>
+  vmap <D-/> ,c<Space>
+  imap <D-/> <C-O>,c<Space>
 
 " Make F2 open NERDTree
-nmap <F2> :NERDTreeToggle<CR>
+  nmap <F2> :NERDTreeToggle<CR>
 
 " For Jon D
 " Exit fast
-inoremap <D-i> <Esc>
-nnoremap <D-i> <Esc>
+  inoremap <D-i> <Esc>
+  nnoremap <D-i> <Esc>
