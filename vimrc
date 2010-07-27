@@ -1,183 +1,178 @@
 " Enable pathogen
-call pathogen#runtime_append_all_bundles()
+  call pathogen#runtime_append_all_bundles()
 
 " UTF-8 All the way
-scriptencoding utf-8
+  scriptencoding utf-8
 
 " Use zsh.
-set shell=zsh
+  set shell=zsh
 
 " Enable filetype-specific indenting, syntax, and plugins
-filetype plugin indent on
-set nocompatible
-syntax on
+  filetype plugin indent on
+  set nocompatible
+  syntax on
 
 " Disable bell.
-set vb t_vb=
+  set vb t_vb=
 
 " Set to auto read when a file is changed from the outside
-set autoread
+  set autoread
+  set nobackup
+  set nowritebackup
+  set noswapfile
 
-set nobackup
-set nowritebackup
-set noswapfile
+" Tabs
+  nmap tp :tabprevious<CR>
+  nmap tn :tabnext<CR>
+  nmap te :tabedit<CR>
+  nmap to :tabonly<CR>
 
 " COLOR SUPPORT
 
 " Explicitly set 256 color support
 " set t_Co=256
 
-colorscheme krunktastic " github256 
+  colorscheme krunktastic " github256 
 
 " TEXT SETTINGS
 
 " Disable line wrapping
-set nowrap
+  set nowrap
 
 " use indents of 2 spaces, and have them copied down lines:
-set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
 
 " line numbers
-set number 
-set numberwidth=3
-
+  set number 
+  set numberwidth=3
 
 " KEY BINDINGS
-
-let mapleader = ","
+  let mapleader = ","
 
 " WINDOW SPLITTING
 
 " Open new horizontal split windows below current
-set splitbelow
+  set splitbelow
 
 " Open new vertical split windows to the right
-set splitright
-
+  set splitright
 
 " Set temporary directory (don't litter local dir with swp/tmp files)
-set directory=/tmp/
+  set directory=/tmp/
 
 " Use the tab complete menu
-set wildmenu
+  set wildmenu
 
 " KEYBINDINGS
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
-
+  nnoremap Y y$
 
 " CUSTOM PLUGINS
 
 " FuzzyFinder Path Splitting (ala textmate)
-let g:fuf_splitPathMatching = 1
-
-" Write stats to file
-let g:fuf_infoFile = '~/.vim-fuf'
-let g:fuf_learningLimit = 500
+  let g:fuf_splitPathMatching = 1
 
 " CUSTOM FUNCTIONS
 
 " Add RebuildTagsFile function/command
-function! s:RebuildTagsFile()
-  !ctags -R --exclude=coverage --exclude=files --exclude=public --exclude=log --exclude=tmp --exclude=vendor *
-endfunction
-command! -nargs=0 RebuildTagsFile call s:RebuildTagsFile()
-
+  function! s:RebuildTagsFile()
+    !ctags -R --exclude=coverage --exclude=files --exclude=public --exclude=log --exclude=tmp --exclude=vendor *
+  endfunction
+  silent! -nargs=0 RebuildTagsFile call s:RebuildTagsFile()
 
 " STATUS BAR CONFIG
-
-set laststatus=2
-set statusline=\ "
-set statusline+=%f\ " file name
-set statusline+=[
-set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
-set statusline+=]
-set statusline+=%h%1*%m%r%w%0* " flag
-set statusline+=%= " right align
-set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+  set laststatus=2
+  set statusline=\ "
+  set statusline+=%f\ " file name
+  set statusline+=[
+  set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+  set statusline+=]
+  set statusline+=%h%1*%m%r%w%0* " flag
+  set statusline+=%= " right align
+  set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
 
 " NERDTree CONFIGURATION
 
 " Enable nice colors
-let NERDChristmasTree = 1
+  let NERDChristmasTree = 1
 
 " Make it easy to see where we are
-let NERDTreeHighlightCursorline = 1
+  let NERDTreeHighlightCursorline = 1
 
 " Make bookmarks visible
-let NERDTreeShowBookmarks = 1
+  let NERDTreeShowBookmarks = 1
 
 " Show hidden files
-let NERDTreeShowHidden = 1
+  let NERDTreeShowHidden = 1
 
 " Don't hijack NETRW
-let NERDTreeHijackNetrw = 0
-let NERDTreeIgnore=['\.$', '\~$']
+  let NERDTreeHijackNetrw = 0
+  let NERDTreeIgnore=['\.$', '\~$']
 
 " Make F2 open NERDTree
-nmap <F2> :NERDTreeToggle<CR>
-
+  nmap <F2> :NERDTreeToggle<CR>
 
 " Search Config
 
 " show the `best match so far' as search strings are typed:
-set incsearch
+  set incsearch
 
 " assume the /g flag on :s substitutions to replace all matches in a line:
-set gdefault
+  set gdefault
 
 " <leader>f to startup an ack search
-map <leader>f :Ack<Space>
-
+  map <leader>f :Ack<Space>
 
 " RUBY
 
 " Highlight ruby operators
-let ruby_operators = 1
+  let ruby_operators = 1
 
 " Turn off rails bits of statusbar
-let g:rails_statusline=0
+  let g:rails_statusline=0
 
 " Clojure config
 
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#ParenRainbow = 1
-let vimclojure#DynamicHighlighting = 1
-
+  let vimclojure#HighlightBuiltins = 1
+  let vimclojure#ParenRainbow = 1
+  let vimclojure#DynamicHighlighting = 1
 
 " NERDCommenter
-let NERDDefaultNesting = 0
-let NERDRemoveExtraSpaces = 1
-let NERDSpaceDelims = 1
+  let NERDDefaultNesting = 0
+  let NERDRemoveExtraSpaces = 1
+  let NERDSpaceDelims = 1
 
 " NERDTree 
 
 " Enable nice colors
-let NERDChristmasTree = 1
+  let NERDChristmasTree = 1
 
 " Make it easy to see where we are
-let NERDTreeHighlightCursorline = 1
+  let NERDTreeHighlightCursorline = 1
 
 " Make bookmarks visible
-let NERDTreeShowBookmarks = 1
+  let NERDTreeShowBookmarks = 1
 
 " Show hidden files
-let NERDTreeShowHidden = 1
-" Don't hijack NETRW
-let NERDTreeHijackNetrw = 0
-let NERDTreeIgnore=['\.$', '\~$']
+  let NERDTreeShowHidden = 1
 
+" Don't hijack NETRW
+  let NERDTreeHijackNetrw = 0
+  let NERDTreeIgnore=['\.$', '\~$']
+
+" SuperTab
+  let g:SuperTabDefaultCompletionType='context'
 
 " AUTOCOMMANDS
 
-function! CustomClojureSettings()
-  set filetype=clojure
-endfunction
+  function! CustomClojureSettings()
+    set filetype=clojure
+  endfunction
 
 " function! CustomJsonSettings()
   " autocmd BufRead *.json set filetype=json
@@ -187,15 +182,15 @@ endfunction
   " autocmd FileType json set errorformat=%E%f:\ %m\ at\ line\ %l,%-G%.%#
 " endfunction
 
-function! CustomMarkdownSettings()
-  set filetype=mkd
-endfunction
+  function! CustomMarkdownSettings()
+    set filetype=mkd
+  endfunction
 
-augroup SpicyAutoCommands
-  autocmd BufEnter,BufWritePost *.clj   call CustomClojureSettings()
-  autocmd BufEnter *.markdown call CustomMarkdownSettings()
-  " autocmd BufRead *.json call CustomJsonSettings()
-  " autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-  " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-  " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-augroup END
+  augroup SpicyAutoCommands
+    autocmd BufEnter,BufWritePost *.clj   call CustomClojureSettings()
+    autocmd BufEnter *.markdown call CustomMarkdownSettings()
+    " autocmd BufRead *.json call CustomJsonSettings()
+    " autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+    " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+    " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  augroup END
