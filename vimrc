@@ -24,7 +24,7 @@
 " Tabs
   nmap tp :tabprevious<CR>
   nmap tn :tabnext<CR>
-  nmap te :tabedit<CR>
+  nmap te :tabedit 
   nmap to :tabonly<CR>
 
 " COLOR SUPPORT
@@ -82,7 +82,7 @@
   function! s:RebuildTagsFile()
     !ctags -R --exclude=coverage --exclude=files --exclude=public --exclude=log --exclude=tmp --exclude=vendor *
   endfunction
-  silent! -nargs=0 RebuildTagsFile call s:RebuildTagsFile()
+  command! -nargs=0 RebuildTagsFile call s:RebuildTagsFile()
 
 " STATUS BAR CONFIG
   set laststatus=2
