@@ -165,9 +165,6 @@
   let NERDTreeHijackNetrw = 0
   let NERDTreeIgnore=['\.$', '\~$']
 
-" SuperTab
-  let g:SuperTabDefaultCompletionType='context'
-
 " AUTOCOMMANDS
 
   function! CustomClojureSettings()
