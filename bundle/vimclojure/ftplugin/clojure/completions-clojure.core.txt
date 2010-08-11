@@ -21,8 +21,10 @@
 *source-path*
 *use-context-classloader*
 *warn-on-reflection*
+->>
 -cache-protocol-fn
 -reset-methods
+EMPTY-NODE
 accessor
 aclone
 add-classpath
@@ -205,6 +207,7 @@ floats
 flush
 fn?
 fnext
+fnil
 for
 force
 format
@@ -449,6 +452,7 @@ sorted-set-by
 sorted?
 special-form-anchor
 special-symbol?
+spit
 split-at
 split-with
 str

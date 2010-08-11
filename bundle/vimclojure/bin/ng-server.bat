@@ -54,4 +54,4 @@ REM # in the file to the classpath.
 IF EXIST .clojure FOR /F %%E IN (.clojure) DO SET CP=!CP!;%%~fE
 
 REM # Since we do not provide any security we at least bind only to the loopback.
-%CLOJURE_JAVA% %CLOJURE_OPTS% -cp "%CP%" com.martiansoftware.nailgun.NGServer 127.0.0.1 %1 %2 %3 %4 %5 %6 %7 %8 %9
+%CLOJURE_JAVA% %CLOJURE_OPTS% -cp "%CP%" vimclojure.nailgun.NGServer 127.0.0.1 %1 %2 %3 %4 %5 %6 %7 %8 %9
