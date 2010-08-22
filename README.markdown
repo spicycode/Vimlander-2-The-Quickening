@@ -1,9 +1,18 @@
-# Once upon a time in the projects, yo.
+# Vimlander 2: The quickening
 
 VIM was reborn like unto the noble phoenix.  And so it was as it always should be since the dawn of the end of times.
 
-# Startup
+## To install
 
-* git submodule init -- update
-* Symlink into your home path (TODO)
-* start your VIM engines!
+    ln -s ~/whereveryouputit ~/.vim
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/gvimrc ~/.gvimrc
+
+## Per user config
+
+To have your very own custom vimrc additions or custom gvimrc just create these files ala:
+
+    touch ~/.vimrc/custom_vimrc
+    touch ~/.vimrc/custom_gvimrc
+
+Then, sprinkle to taste with your defaults, undoing my craziness, etc.  These files are ignored by git and enable fun for all.
