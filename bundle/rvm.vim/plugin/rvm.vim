@@ -1,4 +1,4 @@
-" rvm.vim - Rvm
+" rvm.vim - rvm
 " Author:   Christopher Sexton
 
 " Exit quickly when:
@@ -13,7 +13,7 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 " Code {{{1
-function! Rvm#statusline()
+function! rvm#statusline()
   let status = ''
 
   if !empty($rvm_ruby_interpreter)
@@ -37,9 +37,9 @@ function! Rvm#statusline()
 endfunction
 
 " Only display the ruby version if the filetype is ruby.
-function! Rvm#statusline_ft_ruby()
+function! rvm#statusline_ft_ruby()
   if &filetype=='ruby'
-    return Rvm#statusline()
+    return rvm#statusline()
   else
     return ''
   endif

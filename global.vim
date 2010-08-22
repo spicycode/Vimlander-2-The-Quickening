@@ -8,8 +8,6 @@ filetype plugin indent on
 set nocompatible
 syntax on
 
-
-set t_Co=256                            " Force 256 color mode (in case detection is flakey)
 set vb t_vb=                            " Disable visual bell
 set autoread                            " Set to auto read when a file is changed from the outside
 set nobackup                            " Do not create backup files when saving over existing files
@@ -71,7 +69,7 @@ set statusline+=%h%1*%m%r%w%0* " flag
 set statusline+=\ "
 set statusline+=%{fugitive#statusline()}
 set statusline+=\ "
-set statusline+=%{Rvm#statusline()}
+set statusline+=%{rvm#statusline()}
 set statusline+=%= " right align
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
