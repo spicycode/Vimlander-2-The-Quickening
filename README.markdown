@@ -12,7 +12,7 @@ VIM was reborn like unto the noble phoenix.  And so it was as it always should b
 
 To have your very own custom vimrc additions or custom gvimrc just create these files ala:
 
-    touch ~/.vimrc/custom_vimrc
-    touch ~/.vimrc/custom_gvimrc
+    touch ~/.vim/custom_vimrc
+    touch ~/.vim/custom_gvimrc
 
 Then, sprinkle to taste with your defaults, undoing my craziness, etc.  These files are ignored by git and enable fun for all.
