@@ -3,6 +3,12 @@
 scriptencoding utf-8                    " UTF8 All day, every day
 set directory=/tmp/                     " Set temporary directory (don't litter local dir with swp/tmp files)
 
+if v:version >= 703
+  " Set undofile.
+  set undofile
+  let &undodir=&directory
+endif
+
 " Enable filetype-specific indenting, syntax, and plugins
 filetype plugin indent on
 set nocompatible
@@ -84,3 +90,9 @@ set nohlsearch
 
 " assume the /g flag on :s substitutions to replace all matches in a line:
 set gdefault
+
+" Tags:
+
+" Perform binary tag search (vs linear) in case tags aren't sorted to avoid
+" missing tags
+set notagbgsearch
