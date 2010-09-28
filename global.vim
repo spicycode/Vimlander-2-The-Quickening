@@ -40,7 +40,7 @@ set numberwidth=3                       " Set line number column width
 
 set splitbelow                          " Open new horizontal split windows below current
 set splitright                          " Open new vertical split windows to the right
-set switchbuf=useopen,usetab,split      " Don't change my current buffer on quickfix
+"set switchbuf=useopen,usetab,split      " Don't change my current buffer on quickfix
 
 
 " WildMenuModeConfig:

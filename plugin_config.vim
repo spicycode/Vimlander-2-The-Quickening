@@ -38,3 +38,4 @@ let NERDSpaceDelims = 1
 
 " FuzzyFinder:
 let g:fuf_splitPathMatching = 1         " Enable fuzzy finder path splitting
+let g:fuf_autoPreview = 0               " Disable preview window
