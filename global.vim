@@ -3,6 +3,9 @@
 scriptencoding utf-8                    " UTF8 All day, every day
 set directory=/tmp/                     " Set temporary directory (don't litter local dir with swp/tmp files)
 
+" Set it to internal VIM Help
+set keywordprg=:help
+
 if v:version >= 703
   " Set undofile.
   set undofile
@@ -20,7 +23,11 @@ set nobackup                            " Do not create backup files when saving
 set nowritebackup                       " A little paranoid, but disable the writebackup function as well
 set noswapfile                          " No swap files when editing please
 
-set completeopt-=preview                " No need to preview completion info
+set completeopt=menuone,preview
+
+" Ignore case on insert completion
+set infercase
+
 set matchpairs+=<:>                     " Also match angle brackets
 
 " Mouse: 
@@ -38,6 +45,8 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+" Round indent by a multiple of shiftwidth in indent mode
+set shiftround
 
 set number                              " Enable line numbers
 set numberwidth=3                       " Set line number column width 
@@ -51,7 +60,7 @@ set splitright                          " Open new vertical split windows to the
 
 " WildMenuModeConfig:
 
-set wildmenu                           " Enable the wild menu
+set nowildmenu                         " Disable the wild menu
 set wildmode=list:longest,full         " Better completion
 set wildignore=.svn,CVS,.git           " Ignore VCS files
 set wildignore+=*.o,*.a,*.so           " Ignore compiled binaries
@@ -88,6 +97,9 @@ set incsearch
 " Don't highlight search result.
 set nohlsearch
 
+" Searches wrap around the end of the file
+set wrapscan
+
 " assume the /g flag on :s substitutions to replace all matches in a line:
 set gdefault
 
@@ -95,4 +107,12 @@ set gdefault
 
 " Perform binary tag search (vs linear) in case tags aren't sorted to avoid
 " missing tags
-set notagbgsearch
+set notagbsearch
+
+" Show extra information when using tags in insert mode
+set showfulltag
+
+
+" Window Heights:
+
+set helpheight=10
