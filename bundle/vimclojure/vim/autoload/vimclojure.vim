@@ -364,6 +364,17 @@ function! vimclojure#ResultBuffer.CloseBuffer() dict
 	endif
 endfunction
 
+function! s:InvalidateResultBufferIfNecessary(buf)
+	if g:vimclojure#ResultBuffer.__instance != []
+				\ && g:vimclojure#ResultBuffer.__instance[0]._buffer == a:buf
+		let g:vimclojure#ResultBuffer.__instance = []
+	endif
+endfunction
+
+augroup VimClojureResultBuffer
+	au BufDelete * call s:InvalidateResultBufferIfNecessary(expand("<abuf>"))
+augroup END
+
 " A special result buffer for clojure output.
 let vimclojure#ClojureResultBuffer = copy(vimclojure#ResultBuffer)
 let vimclojure#ClojureResultBuffer["__superResultBufferInit"] =
@@ -493,7 +504,8 @@ if !exists("vimclojure#Browser")
 	elseif has("mac")
 		let vimclojure#Browser = "open"
 	else
-		let vimclojure#Browser = "firefox -new-window"
+		" some freedesktop thing, whatever, issue #67
+		let vimclojure#Browser = "xdg-open"
 	endif
 endif
 

@@ -274,7 +274,7 @@ In case Tom Faulhaber's cl-format package is available in the Classpath
 it will be used for pretty printing, eg. of macroexpansions. The Repl
 can be told to use pretty printing via a global Var.
 >
-        (set! de.kotka.vimclojure.repl/*print-pretty* true)
+        (set! vimclojure.repl/*print-pretty* true)
 <
 
 Omni Completion
@@ -309,10 +309,17 @@ hyphens and (for namespaces) dots. So r-s<C-x><C-o> matches read-string.
 Note: Completion of symbols and keywords is also provided via the <C-N>
 functionality of Vim.
 
+Known Issues
+------------
+
+There seems to be a race condition in nailgun. At the moment there is
+no solution to this problem. In case you get errors with valid looking
+input for vim, please contact me.
+
 License
 -------
 
-Copyright (c) 2008,2009 Meikel Brandmeyer, Frankfurt am Main
+Copyright (c) 2008,2009,2010 Meikel Brandmeyer, Frankfurt am Main
 All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
