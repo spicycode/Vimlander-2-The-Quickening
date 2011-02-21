@@ -17,7 +17,6 @@ Bundle "git://github.com/scrooloose/nerdcommenter.git"
 
 Bundle "ack.vim"
 Bundle "vividchalk"
-Bundle "css_color"
 Bundle "L9"
 Bundle "FuzzyFinder"
 
