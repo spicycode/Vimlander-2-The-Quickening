@@ -112,3 +112,9 @@ set showfulltag
 " Window Heights:
 
 set helpheight=10
+
+" Formatting:
+set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+set fo-=r " Do not automatically insert a comment leader after an enter
+set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
+

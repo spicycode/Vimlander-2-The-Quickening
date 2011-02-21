@@ -1,17 +1,3 @@
-function! CustomClojureSettings()
-  set filetype=clojure
-endfunction
-
-function! CustomMarkdownSettings()
-  set filetype=mkd
-endfunction
-
-function! CustomJsonSettings()
-  set filetype=javascript
-endfunction
-
-augroup SpicyAutoCommands
-  autocmd BufEnter,BufWritePost *.clj   call CustomClojureSettings()
-  autocmd BufEnter *.markdown call CustomMarkdownSettings()
-  autocmd BufEnter,BufWritePost *.json call CustomJsonSettings()
-augroup END
+autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
+autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
+autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit

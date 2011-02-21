@@ -1,6 +1,6 @@
 *surround.txt*  Plugin for deleting, changing, and adding "surroundings"
 
-Author:  Tim Pope <vimNOSPAM@tpope.info>        *surround-author*
+Author:  Tim Pope <vimNOSPAM@tpope.org>         *surround-author*
 License: Same terms as Vim itself (see |license|)
 
 This plugin is only available if 'compatible' is not set.
@@ -50,8 +50,8 @@ below in |surround-replacements|.  Once again, examples are in order.
   <div>Yo!*</div>           cst<p>      <p>Yo!</p>
 
 *ys* takes a valid Vim motion or text object as the first object, and wraps
-it using the second argument as with |cs|.  (Unfortunately there's no good
-mnemonic for "ys".)
+it using the second argument as with |cs|.  (It's a stretch, but a good
+mnemonic for "ys" is "you surround".)
 
   Old text                  Command     New text ~
   Hello w*orld!             ysiw)       Hello (world)!
@@ -106,7 +106,7 @@ thus is highly recommended).  All targets are currently just one character.
 
 Eight punctuation marks, (, ), {, }, [, ], <, and >, represent themselves
 and their counterparts.  If the opening mark is used, contained whitespace is
-also trimmed.  The targets b, B, r, and a are aliases for ), }, ], and >
+also trimmed.  The targets b, B, r, and a are aliases for ), }, ], and > 
 (the first two mirror Vim; the second two are completely arbitrary and
 subject to change).
 
