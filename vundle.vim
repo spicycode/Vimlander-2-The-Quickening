@@ -14,9 +14,10 @@ Bundle "git://github.com/tpope/vim-markdown.git"
 Bundle "git://github.com/tpope/vim-rails.git"
 Bundle "git://github.com/scrooloose/nerdtree.git"
 Bundle "git://github.com/scrooloose/nerdcommenter.git"
+Bundle "git://github.com/chrismetcalf/vim-taglist.git"
 
 Bundle "ack.vim"
 Bundle "vividchalk"
 Bundle "L9"
 Bundle "FuzzyFinder"
-
+Bundle "VimClojure"

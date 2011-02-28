@@ -39,3 +39,8 @@ let NERDSpaceDelims = 1
 " FuzzyFinder:
 let g:fuf_splitPathMatching = 1         " Enable fuzzy finder path splitting
 let g:fuf_autoPreview = 0               " Disable preview window
+
+" TagList:
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let tlist_clojure_settings = 'lisp;f:function'
+let Tlist_Exit_OnlyWindow=1
