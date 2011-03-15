@@ -16,6 +16,8 @@ Bundle "git://github.com/scrooloose/nerdtree.git"
 Bundle "git://github.com/scrooloose/nerdcommenter.git"
 Bundle "git://github.com/chrismetcalf/vim-taglist.git"
 Bundle "git://github.com/kchmck/vim-coffee-script.git"
+Bundle "git://github.com/pangloss/vim-javascript.git"
+Bundle "git://github.com/ervandew/supertab.git"
 
 Bundle "ack.vim"
 Bundle "vividchalk"
