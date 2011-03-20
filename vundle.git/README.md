@@ -10,7 +10,7 @@
 
 2. Configure bundles:
 
-   Append to your `~/.vimrc`:
+   Put into your `~/.vimrc`:
 
         set rtp+=~/.vim/vundle.git/ 
         call vundle#rc()
@@ -23,6 +23,11 @@
         Bundle "git://git.wincent.com/command-t.git"
         " ...
 
+        " NOTE: if some plugins fail to work, put the config *between* lines:
+        " filetype off
+        " "Bundles here
+        " filetype plugin indent on 
+
 3. Install configured bundles:
 
    Launch `vim`, run `:BundleInstall` (**no `Vim` restart required** since v0.5)
@@ -34,20 +39,20 @@
 [Vundle] allows to:
 
 - keep track and configure your scripts right in `.vimrc`
-- install configured scripts (aka bundle) 
-- update configured scripts
-- search [all available vim scripts] by name
-- clean unused scripts up
+- [install] configured scripts (aka bundle) 
+- [update] configured scripts
+- [search] [all available vim scripts] by name
+- [clean] unused scripts up
+- run above actions in a *single keypress* with [interactive mode]
 
-Also as a bonus [Vundle]:
+Also [Vundle]:
 
 - manages runtime path of your installed scripts
 - regenerates helptag atomatically
 
-
 ## Docs
 
-see [`:h vundle`](vundle/blob/master/doc/vundle.txt) vimdoc for more details.
+see [`:h vundle`](vundle/blob/master/doc/vundle.txt#L1) vimdoc for more details.
 
 ## Examples
 
@@ -85,3 +90,9 @@ see [`:h vundle`](vundle/blob/master/doc/vundle.txt) vimdoc for more details.
 [Vim]:http://vim.org
 [Git]:http://git-scm.com
 [all available vim scripts]:http://vim-scripts.org/vim/scripts.html
+
+[install]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L96-110
+[update]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L112-117
+[search]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L119-137
+[clean]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L139-150
+[interactive mode]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L152-175

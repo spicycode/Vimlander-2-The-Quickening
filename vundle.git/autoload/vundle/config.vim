@@ -1,32 +1,36 @@
 func! vundle#config#bundle(arg, ...)
-  let bundle = extend(s:parse_options(a:000), s:parse_name(a:arg))
-  call extend(bundle, copy(s:bundle))
+  let bundle = vundle#config#init_bundle(a:arg, a:000)
   call s:rtp_rm_a()
   call add(g:bundles, bundle)
   call s:rtp_add_a()
-  " TODO: fix this: explicit sourcing kills command-T
-  " call vundle#config#require(bundle)
 endf
 
 func! vundle#config#init()
   if !exists('g:bundles') | let g:bundles = [] | endif
-  let g:vundle_log = tempname()
   call s:rtp_rm_a()
   let g:bundles = []
 endf
 
-func! vundle#config#require(bundle)
-  call s:rtp_add(g:bundle_dir)
-  " TODO: it has to be relative rtpath, not bundle.name
-  exec 'runtime! '.a:bundle.name.'/plugin/*.vim'
-  exec 'runtime! '.a:bundle.name.'/after/*.vim'
-  call s:rtp_rm(g:bundle_dir)
+func! vundle#config#require(bundles)
+  for b in a:bundles
+    call s:rtp_add(b.rtpath())
+    call s:rtp_add(g:bundle_dir)
+    " TODO: it has to be relative rtpath, not bundle.name
+    exec 'runtime! '.b.name.'/plugin/*.vim'
+    exec 'runtime! '.b.name.'/after/*.vim'
+    call s:rtp_rm(g:bundle_dir)
+  endfor
+endf
+
+func! vundle#config#init_bundle(name, opts)
+  let opts = extend(s:parse_options(a:opts), s:parse_name(a:name))
+  return extend(opts, copy(s:bundle))
 endf
 
 func! s:parse_options(opts)
   " TODO: improve this
   if len(a:opts) != 1 | return {} | endif
-    
+
   if type(a:opts[0]) == type({})
     return a:opts[0]
   else
@@ -36,22 +40,28 @@ endf
 
 func! s:parse_name(arg)
   let arg = a:arg
-  if arg =~ '^\s*\(git@\|git://\)\S\+' || arg =~ 'https\?://' || arg =~ '\.git\s*$'
+  if    arg =~ '^\s*\(gh\|github\):\S\+'
+  \  || arg =~ '^\w\+/[^/]\+$'
+    let uri = 'https://github.com/'.split(arg, ':')[-1]
+    let name = substitute(split(uri,'\/')[-1], '\.git\s*$','','i')
+  elseif arg =~ '^\s*\(git@\|git://\)\S\+' 
+  \   || arg =~ 'https\?://'
+  \   || arg =~ '\.git\s*$'
     let uri = arg
     let name = substitute(split(uri,'\/')[-1], '\.git\s*$','','i')
   else
     let name = arg
-    let uri  = 'http://github.com/vim-scripts/'.name.'.git'
+    let uri  = 'https://github.com/vim-scripts/'.name.'.git'
   endif
   return {'name': name, 'uri': uri }
 endf
 
 func! s:rtp_rm_a()
-  for b in g:bundles | call s:rtp_rm(b.rtpath()) | endfor
+  call filter(copy(g:bundles), 's:rtp_rm(v:val.rtpath())')
 endf
 
 func! s:rtp_add_a()
-  for b in reverse(copy(g:bundles)) | call s:rtp_add(b.rtpath()) | endfor
+  call filter(reverse(copy(g:bundles)), 's:rtp_add(v:val.rtpath())')
 endf
 
 func! s:rtp_rm(dir)

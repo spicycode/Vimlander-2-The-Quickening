@@ -1,13 +1,26 @@
-func! vundle#installer#install(bang)
-  call s:reload_bundles()
+func! vundle#installer#install(bang, ...)
   if !isdirectory(g:bundle_dir) | call mkdir(g:bundle_dir, 'p') | endif
-  for bundle in g:bundles | call s:install('!' == a:bang, bundle) | endfor
+  let bundles = (a:1 == '') ?
+        \ s:reload_bundles() :
+        \ map(copy(a:000), 'vundle#config#init_bundle(v:val, {})')
+
+  let installed = s:install(a:bang, bundles)
+  redraw!
+  call vundle#config#require(bundles)
+
+  call s:log("Installed bundles:\n".join((len(installed) == 0 ?  ['no new bundless installed'] : map(installed, 'v:val.name')),"\n"))
+
+  let help_dirs = vundle#installer#helptags(bundles)
+  if len(help_dirs) > 0
+    call s:log('Helptags: done. '.len(help_dirs).' bundles processed')
+  endif
 endf
 
-func! vundle#installer#helptags()
-  let c = 0
-  for bundle in g:bundles | let c += s:helptags(bundle.rtpath()) | endfor
-  call s:log('Done. '.c.' bundles processed')
+func! vundle#installer#helptags(bundles)
+  let bundle_dirs = map(copy(a:bundles),'v:val.rtpath()')
+  let help_dirs = filter(bundle_dirs, 's:has_doc(v:val)')
+  call map(copy(help_dirs), 's:helptags(v:val)')
+  return help_dirs
 endf
 
 func! vundle#installer#clean(bang)
@@ -15,7 +28,8 @@ func! vundle#installer#clean(bang)
   let all_dirs = split(globpath(g:bundle_dir, '*'), "\n")
   let x_dirs = filter(all_dirs, '0 > index(bundle_dirs, v:val)')
   if (!empty(x_dirs))
-    if ('!' == a:bang || input('Are you sure you want to remove '.len(x_dirs).' bundles?') =~? 'y')
+    " TODO: improve message
+    if (a:bang || input('Are you sure you want to remove '.len(x_dirs).' bundles?') =~? 'y')
       exec '!rm -rf '.join(map(x_dirs, 'shellescape(v:val)'), ' ')
     endif
   end
@@ -25,42 +39,36 @@ func! s:reload_bundles()
   " TODO: obtain Bundles without sourcing .vimrc
   silent source $MYVIMRC
   if filereadable($MYGVIMRC)| silent source $MYGVIMRC | endif
+  return g:bundles
+endf
+
+func! s:has_doc(rtp)
+  return isdirectory(a:rtp.'/doc')
+    \ && (!filereadable(a:rtp.'/doc/tags') || filewritable(a:rtp.'/doc/tags'))
+    \ && (len(glob(a:rtp.'/doc/*.txt')) > 0 || len(glob(a:rtp.'/doc/*.??x')) > 0)
 endf
 
 func! s:helptags(rtp)
-  if !(isdirectory(a:rtp.'/doc') && (!filereadable(a:rtp.'/doc/tags') || filewritable(a:rtp.'/doc/tags')))
-    return 0
-  endif
   helptags `=a:rtp.'/doc'`
-  return 1
 endf
 
-func! s:sync(bang, bundle) 
+func! s:sync(bang, bundle) abort
   let git_dir = a:bundle.path().'/.git'
-  silent exec '!echo "* '.a:bundle.name.'" 2>&1 >>'. g:vundle_log
   if isdirectory(git_dir)
     if !(a:bang) | return 0 | endif
-    silent exec '!cd '.a:bundle.path().'; git pull 2>&1 >>'.g:vundle_log
+    let cmd = 'cd '.a:bundle.path().' && git pull'
   else
-    silent exec '!git clone '.a:bundle.uri.' '.a:bundle.path().' 2>&1 >>'.g:vundle_log
+    let cmd = 'git clone '.a:bundle.uri.' '.a:bundle.path()
   endif
+  silent exec '!'.cmd
   return 1
 endf
 
-func! s:install(bang, bundle)
-  let synced = s:sync(a:bang, a:bundle)
-  call s:helptags(a:bundle.rtpath())
-  call s:log(a:bundle.name.' '.(synced ? '': ' already').' installed')
-  if synced | call vundle#config#require(a:bundle) | endif
+func! s:install(bang, bundles)
+  return filter(copy(a:bundles), 's:sync(a:bang, v:val)')
 endf
 
 " TODO: make it pause after output in console mode
 func! s:log(msg)
-  if has('gui_running')
-    echo a:msg
-  else
-    " console vim requires to hit ENTER after each !cmd with stdout output
-    " workaround
-    silent exec '! echo '.a:msg.' >&2| cat >/dev/null' 
-  endif
+  echo a:msg
 endf
