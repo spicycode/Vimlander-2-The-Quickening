@@ -75,14 +75,14 @@ set wildignore+=*.fam                  " Ignore compiled Falcon files
 " Always show status bar
 set laststatus=2
 
-set statusline=\ "
-set statusline+=%f\ " file name
-set statusline+=[
-set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
-set statusline+=]
-set statusline+=%h%1*%m%r%w%0* " flag
-set statusline+=%= " right align
-set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+" set statusline=\ "
+" set statusline+=%f\ " file name
+" set statusline+=[
+" set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+" set statusline+=]
+" set statusline+=%h%1*%m%r%w%0* " flag
+" set statusline+=%= " right align
+" set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
 
 " Search:
@@ -117,4 +117,6 @@ set helpheight=10
 set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
 set fo-=r " Do not automatically insert a comment leader after an enter
 set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
+
+set t_Co=256
 
