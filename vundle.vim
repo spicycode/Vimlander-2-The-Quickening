@@ -23,6 +23,7 @@ Bundle "git://github.com/Lokaltog/vim-distinguished.git"
 Bundle "git://github.com/Lokaltog/vim-easymotion.git"
 Bundle "git://github.com/scrooloose/syntastic.git"
 Bundle "git://github.com/tyru/current-func-info.vim.git"
+Bundle "git://github.com/cespare/vim-bclose.git"
 
 Bundle "ack.vim"
 Bundle "L9"

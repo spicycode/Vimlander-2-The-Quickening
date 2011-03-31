@@ -45,3 +45,6 @@ let Tlist_Exit_OnlyWindow=1
 let g:EasyMotion_do_mapping=0
 nnoremap <silent> <Leader>w       :call EasyMotionWB(0, 0)<CR>
 vnoremap <silent> <Leader>w  :<C-U>call EasyMotionWB(1, 0)<CR>
+
+" BClose
+nmap <Leader>x <Plug>Kwbd
