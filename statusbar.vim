@@ -156,9 +156,3 @@ let &t_EI="]12;\#dd4010\x7"
 
 au VimLeave * silent !echo -ne "]12;\#dd4010\x7"
 " }}}
-" Use custom fillchars/listchars/showbreak icons {{{
-set fillchars=vert:ā,fold:Ķ,diff:Ď
-set listchars=tab:Ā\ ,trail:Ė,eol:ĕ
-set showbreak=Ģģ
-" }}}
-
