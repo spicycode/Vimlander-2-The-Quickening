@@ -18,3 +18,7 @@ map <leader>f :Ack<Space>
 
 " ExitInsertMode: Alternative keybinding
 imap jj <Esc>
+
+nmap <leader>lf :FufCoverageFile<CR>
+nmap <leader>lb :FufBuffer<CR>
+nmap <leader>lt :FufTag<CR>

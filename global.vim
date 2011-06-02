@@ -32,7 +32,6 @@ set matchpairs+=<:>                     " Also match angle brackets
 
 " Mouse: 
 
-set nomousefocus                        " Don't focus the window when the mouse pointer is moved.
 set mousehide                           " Hide mouse pointer on insert mode.
 
 " Text:
@@ -60,15 +59,12 @@ set splitright                          " Open new vertical split windows to the
 
 " WildMenuModeConfig:
 
-set nowildmenu                         " Disable the wild menu
 set wildmode=list:longest,full         " Better completion
 set wildignore=.svn,CVS,.git           " Ignore VCS files
 set wildignore+=*.o,*.a,*.so           " Ignore compiled binaries
 set wildignore+=*.jpg,*.png,*.gif      " Ignore images
 set wildignore+=*.pdf                  " Ignore PDF files
 set wildignore+=*.pyc,*.pyo            " Ignore compiled Python files
-set wildignore+=*.fam                  " Ignore compiled Falcon files
-
 
 " StatusBar:
 
@@ -83,7 +79,6 @@ set laststatus=2
 " set statusline+=%h%1*%m%r%w%0* " flag
 " set statusline+=%= " right align
 " set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
-
 
 " Search:
 
