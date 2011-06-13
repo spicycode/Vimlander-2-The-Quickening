@@ -66,20 +66,6 @@ set wildignore+=*.jpg,*.png,*.gif      " Ignore images
 set wildignore+=*.pdf                  " Ignore PDF files
 set wildignore+=*.pyc,*.pyo            " Ignore compiled Python files
 
-" StatusBar:
-
-" Always show status bar
-set laststatus=2
-
-" set statusline=\ "
-" set statusline+=%f\ " file name
-" set statusline+=[
-" set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
-" set statusline+=]
-" set statusline+=%h%1*%m%r%w%0* " flag
-" set statusline+=%= " right align
-" set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
-
 " Search:
 
 " show the `best match so far' as search strings are typed:
