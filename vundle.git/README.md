@@ -1,38 +1,70 @@
 ## About
 
-[Vundle] is a short cut for **V**imb**undle** and is a [Vim] plugin manager.
+[Vundle] is short for **V**imb**undle** and is a [Vim] plugin manager.
 
 ## Quick start
 
 1. Setup [Vundle]:
 
-        git clone http://github.com/gmarik/vundle.git ~/.vim/vundle.git
+     ```
+     $ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+     ```
 
 2. Configure bundles:
 
-   Put into your `~/.vimrc`:
+     Sample `.vimrc`:
 
-        set rtp+=~/.vim/vundle.git/ 
-        call vundle#rc()
+     ```vim
+     set nocompatible               " be iMproved
+     filetype off                   " required!
 
-        " Bundles:
-        Bundle "L9"
-        Bundle "FuzzyFinder"
-        Bundle "rails.vim"
-        Bundle "ack.vim"
-        Bundle "git://git.wincent.com/command-t.git"
-        " ...
+     set rtp+=~/.vim/bundle/vundle/
+     call vundle#rc()
 
-        " NOTE: if some plugins fail to work, put the config *between* lines:
-        " filetype off
-        " "Bundles here
-        " filetype plugin indent on 
+     " let Vundle manage Vundle
+     " required! 
+     Bundle 'gmarik/vundle'
+
+     " My Bundles here:
+     "
+     " original repos on github
+     Bundle 'tpope/vim-fugitive'
+     Bundle 'lokaltog/vim-easymotion'
+     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+     " vim-scripts repos
+     Bundle 'L9'
+     Bundle 'FuzzyFinder'
+     Bundle 'rails.vim'
+     " non github repos
+     Bundle 'git://git.wincent.com/command-t.git'
+     " ...
+
+     filetype plugin indent on     " required! 
+     "
+     " Brief help
+     "
+     " :BundleInstall  - install bundles (won't update installed)
+     " :BundleInstall! - update if installed
+     "
+     " :Bundles foo    - search for foo
+     " :Bundles! foo   - refresh cached list and search for foo
+     "
+     " :BundleClean    - confirm removal of unused bundles
+     " :BundleClean!   - remove without confirmation
+     "
+     " see :h vundle for more details
+     " or wiki for FAQ
+     " Note: comments after Bundle command are not allowed..
+
+     ```
 
 3. Install configured bundles:
 
-   Launch `vim`, run `:BundleInstall` (**no `Vim` restart required** since v0.5)
+     Launch `vim`, run `:BundleInstall`. 
 
-   Installing requires [Git] and triggers [Git clone](http://gitref.org/creating/#clone) for each configured repo to `~/.vim/bundle/`.
+     *Windows users* see [Vundle for Windows](https://github.com/gmarik/vundle/wiki/Vundle-for-Windows)
+
+     Installing requires [Git] and triggers [Git clone](http://gitref.org/creating/#clone) for each configured repo to `~/.vim/bundle/`.
 
 ## Why Vundle
 
@@ -41,7 +73,7 @@
 - keep track and configure your scripts right in `.vimrc`
 - [install] configured scripts (aka bundle) 
 - [update] configured scripts
-- [search] [all available vim scripts] by name
+- [search] by name [all available vim scripts]
 - [clean] unused scripts up
 - run above actions in a *single keypress* with [interactive mode]
 
@@ -58,6 +90,23 @@ see [`:h vundle`](vundle/blob/master/doc/vundle.txt#L1) vimdoc for more details.
 
    See [gmarik's vimrc](https://github.com/gmarik/vimfiles/blob/1f4f26d42f54443f1158e0009746a56b9a28b053/vimrc#L136) for working example.
 
+   If you have an interesting example, feel free to send a pull request with link to your config. Thx!
+
+## FAQ
+
+see [wiki](/gmarik/vundle/wiki)
+
+## Contributors
+
+* [redlinesoftware](http://redlinesoftware.com) - for lending me 24" monitor!
+* [Marc Jeanson](https://github.com/marcjeanson) - vim dude I always bug for help...;)
+* [Brad Anderson](http://github.com/eco) (windows support)
+* [Ryan W](http://github.com/rygwdn)
+* [termac](http://github.com/termac)
+* and others
+
+*Thank you!*
+
 ## Inspiration and ideas from
 
 * [pathogen]
@@ -66,8 +115,7 @@ see [`:h vundle`](vundle/blob/master/doc/vundle.txt#L1) vimdoc for more details.
 
 ## Also
 
-* Vundle was developed and tested in [Vim] 7.3 on `OSX` and `Linux`
-* Vundle wasn't tested on windows(so if you care i'm waiting for your pull request)
+* Vundle was developed and tested with [Vim] 7.3 on `OSX`, `Linux` and `Windows`
 * Vundle tries to be as [KISS](http://en.wikipedia.org/wiki/KISS_principle) as possible
 
 ## TODO:
@@ -76,12 +124,14 @@ see [`:h vundle`](vundle/blob/master/doc/vundle.txt#L1) vimdoc for more details.
 * √ activate newly added bundles on .vimrc reload or after :BundleInstall
 * √ use preview window for search results
 * √ vim documentation
+* √ put vundle to bundles/ too(will fix vundle help)
+* √ tests
 * improve error handling
+* handle dependencies
 * allow specify revision/version?
-* search by description aswell
-* show descrption in search results
+* search by description as well
+* show description in search results
 * instead sourcing .vimrc before installation come up with another solution
-* tests
 * make it rock!
 
 [Vundle]:http://github.com/gmarik/vundle
@@ -91,8 +141,8 @@ see [`:h vundle`](vundle/blob/master/doc/vundle.txt#L1) vimdoc for more details.
 [Git]:http://git-scm.com
 [all available vim scripts]:http://vim-scripts.org/vim/scripts.html
 
-[install]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L96-110
-[update]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L112-117
-[search]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L119-137
-[clean]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L139-150
-[interactive mode]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L152-175
+[install]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L110-124
+[update]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L126-131
+[search]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L133-155
+[clean]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L157-169
+[interactive mode]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L172-205

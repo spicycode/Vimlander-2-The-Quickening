@@ -11,7 +11,7 @@ func! vundle#config#init()
   let g:bundles = []
 endf
 
-func! vundle#config#require(bundles)
+func! vundle#config#require(bundles) abort
   for b in a:bundles
     call s:rtp_add(b.rtpath())
     call s:rtp_add(g:bundle_dir)
@@ -23,7 +23,7 @@ func! vundle#config#require(bundles)
 endf
 
 func! vundle#config#init_bundle(name, opts)
-  let opts = extend(s:parse_options(a:opts), s:parse_name(a:name))
+  let opts = extend(s:parse_options(a:opts), s:parse_name(substitute(a:name,"['".'"]\+','','g')))
   return extend(opts, copy(s:bundle))
 endf
 
@@ -40,15 +40,15 @@ endf
 
 func! s:parse_name(arg)
   let arg = a:arg
-  if    arg =~ '^\s*\(gh\|github\):\S\+'
-  \  || arg =~ '^\w\+/[^/]\+$'
+  if    arg =~? '^\s*\(gh\|github\):\S\+'
+  \  || arg =~? '^[a-z0-9][a-z0-9-]*/[^/]\+$'
     let uri = 'https://github.com/'.split(arg, ':')[-1]
     let name = substitute(split(uri,'\/')[-1], '\.git\s*$','','i')
-  elseif arg =~ '^\s*\(git@\|git://\)\S\+' 
-  \   || arg =~ 'https\?://'
-  \   || arg =~ '\.git\s*$'
+  elseif arg =~? '^\s*\(git@\|git://\)\S\+' 
+  \   || arg =~? '\(file\|https\?\)://'
+  \   || arg =~? '\.git\s*$'
     let uri = arg
-    let name = substitute(split(uri,'\/')[-1], '\.git\s*$','','i')
+    let name = split( substitute(uri,'/\?\.git\s*$','','i') ,'\/')[-1]
   else
     let name = arg
     let uri  = 'https://github.com/vim-scripts/'.name.'.git'
@@ -64,22 +64,26 @@ func! s:rtp_add_a()
   call filter(reverse(copy(g:bundles)), 's:rtp_add(v:val.rtpath())')
 endf
 
-func! s:rtp_rm(dir)
-  exec 'set rtp-='.a:dir
-  exec 'set rtp-='.expand(a:dir.'/after')
+func! s:rtp_rm(dir) abort
+  exec 'set rtp-='.fnameescape(expand(a:dir))
+  exec 'set rtp-='.fnameescape(expand(a:dir.'/after'))
 endf
 
-func! s:rtp_add(dir)
-  exec 'set rtp^='.a:dir
-  exec 'set rtp+='.expand(a:dir.'/after')
+func! s:rtp_add(dir) abort
+  exec 'set rtp^='.fnameescape(expand(a:dir))
+  exec 'set rtp+='.fnameescape(expand(a:dir.'/after'))
+endf
+
+func! s:expand_path(path) abort
+  return simplify(expand(a:path))
 endf
 
 let s:bundle = {}
 
 func! s:bundle.path()
-  return join([g:bundle_dir, self.name], '/')
+  return s:expand_path(g:bundle_dir.'/'.self.name)
 endf
 
 func! s:bundle.rtpath()
-  return has_key(self, 'rtp') ? join([self.path(), self.rtp], '/') : self.path()
+  return has_key(self, 'rtp') ? s:expand_path(self.path().'/'.self.rtp) : self.path()
 endf

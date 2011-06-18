@@ -25,8 +25,26 @@ func! vundle#scripts#complete(a,c,d)
 endf
 
 func! vundle#scripts#install() abort
-  let line = substitute(substitute(getline('.'), '\s*Bundle\s*','','g'), "'",'','g')
+  let l = getline('.')
+  if l !~ '^Bundle '
+    echohl Error | echo 'Select Bundle to install'| echohl None
+    return 0
+  end
+  let line = substitute(substitute(l, '\s*Bundle\s*','','g'), "'",'','g')
   call vundle#installer#install(0, line)
+endf
+
+func! vundle#scripts#setup_view() abort
+  setl hls ro noma ignorecase syntax=vim
+
+  syn keyword vimCommand Bundle
+
+  nnoremap <buffer> q :wincmd q<CR>
+  nnoremap <buffer> i :call vundle#scripts#install()<CR>
+  nnoremap <buffer> r :Bundles 
+  nnoremap <buffer> c :BundleClean<CR>
+  nnoremap <buffer> C :BundleClean!<CR>
+  nnoremap <buffer> R :call vundle#scripts#reload()<CR>
 endf
 
 func! s:display(headers, results)
@@ -34,14 +52,26 @@ func! s:display(headers, results)
   let results = reverse(map(a:results, ' printf("Bundle ' ."'%s'".'", v:val) '))
   call writefile(a:headers + results, s:browse)
   silent pedit `=s:browse`
+
   wincmd P | wincmd H
+
   setl ft=vundle
+  call vundle#scripts#setup_view()
 endf
 
 func! s:fetch_scripts(to)
-  let temp = tempname()
-  exec '!curl http://vim-scripts.org/api/scripts.json > '.temp.
-    \  '&& mkdir -p $(dirname  '.a:to.') && mv -f '.temp.' '.a:to
+  let temp = shellescape(tempname())
+  if has('win32') || has('win64')
+    let scripts_dir = fnamemodify(expand(a:to), ":h")
+    if !isdirectory(scripts_dir)
+      call mkdir(scripts_dir, "p")
+    endif
+    exec '!curl http://vim-scripts.org/api/scripts.json > '.temp.
+      \  '&& move /Y '.temp.' '.shellescape(a:to)
+  else
+    exec '!curl http://vim-scripts.org/api/scripts.json > '.temp.
+      \  '&& mkdir -p $(dirname  '.shellescape(a:to).') && mv -f '.temp.' '.shellescape(a:to)
+  endif
 endf
 
 func! s:load_scripts(bang)
