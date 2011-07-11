@@ -22,3 +22,6 @@ imap jj <Esc>
 nmap <leader>lf :FufCoverageFile<CR>
 nmap <leader>lb :FufBuffer<CR>
 nmap <leader>lt :FufTag<CR>
+
+" Close buffers
+nmap <leader>b :bd<CR>
