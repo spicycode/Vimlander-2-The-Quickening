@@ -2,7 +2,7 @@
 source ~/.vim/keybindings.gui.vim
 
 " Font: Choose font and enable anti-aliasing
-set guifont=Monaco:h11
+set guifont=Monaco:h20
 set antialias
 
 " Maximize: Vert and Horiz by default
@@ -21,6 +21,7 @@ set guioptions-=e
 " Don't flick cursor.
 set guicursor=a:blinkon0
 
+colorscheme ir_black
 
 if filereadable(expand("~/.vim/custom_gvimrc"))
   source ~/.vim/custom_gvimrc
