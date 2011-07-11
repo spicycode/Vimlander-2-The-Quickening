@@ -1,4 +1,4 @@
-set runtimepath+=~/.vim/vundle
+set runtimepath+=~/.vim/vundle.git
 call vundle#rc()
 
 " Bundles:
