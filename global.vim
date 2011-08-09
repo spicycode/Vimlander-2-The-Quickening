@@ -82,10 +82,6 @@ set gdefault
 
 " Tags:
 
-" Perform binary tag search (vs linear) in case tags aren't sorted to avoid
-" missing tags
-set notagbsearch
-
 " Show extra information when using tags in insert mode
 set showfulltag
 

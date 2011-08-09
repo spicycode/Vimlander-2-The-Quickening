@@ -7,6 +7,3 @@ autocmd BufRead,BufNewFile {*.json}                                             
 " Clear trailing whitespace
 autocmd BufWritePre        {*.coffee,*.js}                                 :%s/\s\+$//e
 
-
-" CoffeeScript:
-autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
