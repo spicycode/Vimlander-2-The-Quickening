@@ -84,7 +84,7 @@ set gdefault
 
 " Show extra information when using tags in insert mode
 set showfulltag
-
+set tags=.git/tags
 
 " Window Heights:
 
