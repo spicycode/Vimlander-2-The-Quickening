@@ -86,10 +86,6 @@ set gdefault
 set showfulltag
 set tags=.git/tags
 
-" Window Heights:
-
-set helpheight=10
-
 " Formatting:
 set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
 set fo-=r " Do not automatically insert a comment leader after an enter

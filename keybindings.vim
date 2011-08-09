@@ -23,5 +23,13 @@ nmap <leader>lf :FufCoverageFile<CR>
 nmap <leader>lb :FufBuffer<CR>
 nmap <leader>lt :FufTag<CR>
 
+" Following mapping is a replacement for <C-]>:
+noremap <silent> <C-]> :FufTagWithCursorWord!<CR>
+" Following mapping is a replacement for <C-]>:
+nnoremap <silent> <C-]> :FufBufferTagWithCursorWord!<CR>
+vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
+nnoremap <silent> <C-]> :FufBufferTagAllWithCursorWord!<CR>
+vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
+
 " Close buffers
 nmap <leader>b :bd<CR>
