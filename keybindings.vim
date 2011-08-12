@@ -26,9 +26,9 @@ nmap <leader>lt :FufTag<CR>
 " Following mapping is a replacement for <C-]>:
 noremap <silent> <C-]> :FufTagWithCursorWord!<CR>
 " Following mapping is a replacement for <C-]>:
-nnoremap <silent> <C-]> :FufBufferTagWithCursorWord!<CR>
+nnoremap <silent> <C-]> :FufTagWithCursorWord!<CR>
 vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
-nnoremap <silent> <C-]> :FufBufferTagAllWithCursorWord!<CR>
+nnoremap <silent> <C-]> :FufTagWithCursorWord!<CR>
 vnoremap <silent> <C-]> :FufBufferTagAllWithSelectedText!<CR>
 
 " Close buffers
