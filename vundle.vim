@@ -26,6 +26,5 @@ Bundle "vim-scripts/L9"
 Bundle "vim-scripts/FuzzyFinder"
 Bundle "jayferd/eco.vim"
 Bundle "vim-scripts/VimClojure"
-Bundle "skammer/vim-css-color"
 Bundle "ack.vim"
 Bundle 'Conque-Shell'
