@@ -16,3 +16,9 @@ To have your very own custom vimrc additions or custom gvimrc just create these 
     touch ~/.vim/custom_gvimrc
 
 Then, sprinkle to taste with your defaults, undoing my craziness, etc.  These files are ignored by git and enable fun for all.
+
+## On first run
+
+You will see errors, but this is just Vim complaining about not having the plugins it wants installed.   Simply run:
+
+    :BundleInstall!
