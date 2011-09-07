@@ -2,6 +2,8 @@
 
 [Vundle] is short for **V**imb**undle** and is a [Vim] plugin manager.
 
+![Vundle-installer](https://lh3.googleusercontent.com/-4EnLqLpEZlk/TlqXWpgWxOI/AAAAAAAAHRw/oBAl6s1hj7U/vundle-install2.png)
+
 ## Quick start
 
 1. Setup [Vundle]:
@@ -29,7 +31,7 @@
      "
      " original repos on github
      Bundle 'tpope/vim-fugitive'
-     Bundle 'lokaltog/vim-easymotion'
+     Bundle 'Lokaltog/vim-easymotion'
      Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
      " vim-scripts repos
      Bundle 'L9'
@@ -42,19 +44,13 @@
      filetype plugin indent on     " required! 
      "
      " Brief help
+     " :BundleList          - list configured bundles
+     " :BundleInstall(!)    - install(update) bundles
+     " :BundleSearch(!) foo - search(or refresh cache first) for foo
+     " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
      "
-     " :BundleInstall  - install bundles (won't update installed)
-     " :BundleInstall! - update if installed
-     "
-     " :Bundles foo    - search for foo
-     " :Bundles! foo   - refresh cached list and search for foo
-     "
-     " :BundleClean    - confirm removal of unused bundles
-     " :BundleClean!   - remove without confirmation
-     "
-     " see :h vundle for more details
-     " or wiki for FAQ
-     " Note: comments after Bundle command are not allowed..
+     " see :h vundle for more details or wiki for FAQ
+     " NOTE: comments after Bundle command are not allowed..
 
      ```
 
@@ -126,12 +122,11 @@ see [wiki](/gmarik/vundle/wiki)
 * √ vim documentation
 * √ put vundle to bundles/ too(will fix vundle help)
 * √ tests
-* improve error handling
-* handle dependencies
+* √ improve error handling
 * allow specify revision/version?
-* search by description as well
+* handle dependencies
 * show description in search results
-* instead sourcing .vimrc before installation come up with another solution
+* search by description as well
 * make it rock!
 
 [Vundle]:http://github.com/gmarik/vundle
@@ -142,7 +137,7 @@ see [wiki](/gmarik/vundle/wiki)
 [all available vim scripts]:http://vim-scripts.org/vim/scripts.html
 
 [install]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L110-124
-[update]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L126-131
-[search]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L133-155
-[clean]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L157-169
-[interactive mode]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L172-205
+[update]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L128-133
+[search]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L135-157
+[clean]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L167-179
+[interactive mode]:https://github.com/gmarik/vundle/blob/master/doc/vundle.txt#L183-209
