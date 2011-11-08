@@ -2,7 +2,7 @@
 source ~/.vim/keybindings.gui.vim
 
 " Font: Choose font and enable anti-aliasing
-set guifont=Monaco:h20
+set guifont=Monaco:h14
 set antialias
 
 " Maximize: Vert and Horiz by default
