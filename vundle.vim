@@ -26,3 +26,5 @@ Bundle "jayferd/eco.vim"
 Bundle "vim-scripts/VimClojure"
 Bundle "ack.vim"
 Bundle 'Conque-Shell'
+" MatchTag
+Bundle 'gregsexton/MatchTag'
