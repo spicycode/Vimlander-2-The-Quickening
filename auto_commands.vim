@@ -7,3 +7,5 @@ autocmd BufRead,BufNewFile {*.json}                                             
 " Clear trailing whitespace
 autocmd BufWritePre        {*.coffee,*.js}                                 :%s/\s\+$//e
 
+" Resize splits when the window is resized
+autocmd VimResized * exe "normal! \<c-w>="
