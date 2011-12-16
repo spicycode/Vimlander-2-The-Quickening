@@ -27,6 +27,7 @@ Bundle "vim-scripts/VimClojure"
 Bundle "ack.vim"
 Bundle 'Conque-Shell'
 Bundle 'ervandew/screen'
+Bundle "jade.vim"
 
 " MatchTag
 Bundle 'gregsexton/MatchTag'

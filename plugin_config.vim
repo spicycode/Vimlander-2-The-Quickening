@@ -27,3 +27,8 @@ vnoremap <silent> <Leader>w  :<C-U>call EasyMotionWB(1, 0)<CR>
 
 " BClose
 nmap <Leader>x <Plug>Kwbd
+
+
+" Screen IMPL
+let g:ScreenImpl = 'Tmux'
+

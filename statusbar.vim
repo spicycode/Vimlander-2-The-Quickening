@@ -74,7 +74,7 @@ augroup StatusLineHighlight
   au InsertEnter,CursorHoldI * call <SID>StatusLine((exists('b:stl') ? b:stl : g:default_stl), 'Insert', 1)
 augroup END
 
-let &t_SI="]12;\#89b6e2\x7"
-let &t_EI="]12;\#dd4010\x7"
+"let &t_SI="]12;\#89b6e2\x7"
+"et &t_EI="]12;\#dd4010\x7"
 
-au VimLeave * silent !echo -ne "]12;\#dd4010\x7"
+"u VimLeave * silent !echo -ne "]12;\#dd4010\x7"
