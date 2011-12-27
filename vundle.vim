@@ -25,9 +25,8 @@ Bundle "vim-scripts/FuzzyFinder"
 Bundle "jayferd/eco.vim"
 Bundle "vim-scripts/VimClojure"
 Bundle "ack.vim"
-Bundle 'Conque-Shell'
-Bundle 'ervandew/screen'
 Bundle "jade.vim"
+Bundle "kien/ctrlp.vim"
 
 " MatchTag
 Bundle 'gregsexton/MatchTag'
