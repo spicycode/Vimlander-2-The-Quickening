@@ -90,6 +90,7 @@ set fo-=o " Do not automatically insert the current comment leader after hitting
 set fo-=r " Do not automatically insert a comment leader after an enter
 set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
 
+" We use all the colors, all 256 of the possible colors in the universe
 set t_Co=256
 
 set hidden

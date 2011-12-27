@@ -27,6 +27,7 @@ Bundle "vim-scripts/VimClojure"
 Bundle "ack.vim"
 Bundle "jade.vim"
 Bundle "kien/ctrlp.vim"
+Bundle "wookiehangover/jshint.vim"
 
 " MatchTag
 Bundle 'gregsexton/MatchTag'

@@ -15,8 +15,8 @@ set guioptions-=m
 " Scrollbar is always off.
 set guioptions-=rL
 
-" Console style tab labels
-set guioptions-=e
+" Native style tab labels (this ones for you larry)
+set guioptions+=e
 
 " Don't flick cursor.
 set guicursor=a:blinkon0

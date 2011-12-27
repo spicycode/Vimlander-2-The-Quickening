@@ -11,7 +11,6 @@ endif
 
 let colors_name = "spicycode"
 
-set t_Co=256
 highlight Normal ctermfg=White ctermbg=Black  
 highlight Cursor ctermfg=Black ctermbg=Yellow 
 highlight Keyword ctermfg=202 
