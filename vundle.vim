@@ -28,6 +28,7 @@ Bundle "ack.vim"
 Bundle "jade.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "wookiehangover/jshint.vim"
+Bundle "noahfrederick/Hemisu"
 
 " MatchTag
 Bundle 'gregsexton/MatchTag'
