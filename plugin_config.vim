@@ -1,3 +1,6 @@
+" Powerline:
+let g:Powerline_symbols = 'fancy'
+
 " RubyAndRails:
 " Highlight ruby operators
 let ruby_operators = 1
@@ -10,15 +13,13 @@ let vimclojure#HighlightBuiltins = 1
 let vimclojure#ParenRainbow = 1
 let vimclojure#DynamicHighlighting = 1
 
-" NERDCommenter:
-let NERDDefaultNesting = 0
-let NERDRemoveExtraSpaces = 1
-let NERDSpaceDelims = 1
+" CtrlP
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*  " Linux/MacOSX
 
-" FuzzyFinder:
-let g:fuf_splitPathMatching = 1         " Enable fuzzy finder path splitting
-let g:fuf_autoPreview = 0               " Disable preview window
-let g:fuf_buffertag_ctagsPath='/usr/local/bin/ctags'
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\.git$\|\.hg$\|\.svn$',
+\ 'file': '\.exe$\|\.so$\|\.dll$'
+\ }
 
 " EasyMotion:
 let g:EasyMotion_do_mapping=0
@@ -28,7 +29,5 @@ vnoremap <silent> <Leader>w  :<C-U>call EasyMotionWB(1, 0)<CR>
 " BClose
 nmap <Leader>x <Plug>Kwbd
 
-
 " Screen IMPL
 let g:ScreenImpl = 'Tmux'
-
