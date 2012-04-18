@@ -5,15 +5,16 @@ let mapleader = ","
 nnoremap Y y$
 
 " TABS: Navigation
-nmap tp :tabprevious<CR>
-nmap tn :tabnext<CR>
-nmap te :tabedit 
-
-" NERDTree: Open with F2
-nmap <F2> :NERDTreeToggle<CR>
+nmap <leader>tp :tabprevious<CR>
+nmap <leader>tn :tabnext<CR>
+nmap <leader>te :tabedit 
 
 " AckVim: <leader>f to search
 map <leader>f :Ack<Space>
 
 " Close buffers
 nmap <leader>b :bd<CR>
+
+nmap <leader>lf :CtrlP<CR>
+nmap <leader>lb :CtrlPBuffer<CR>
+nmap <leader>lt :CtrlPTag<CR>
