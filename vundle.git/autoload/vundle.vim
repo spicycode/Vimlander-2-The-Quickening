@@ -2,7 +2,7 @@
 " Author:       gmarik
 " HomePage:     http://github.com/gmarik/vundle
 " Readme:       http://github.com/gmarik/vundle/blob/master/README.md
-" Version:      0.8
+" Version:      0.9
 
 com! -nargs=+         Bundle
 \ call vundle#config#bundle(<args>)
@@ -30,13 +30,14 @@ if (has('signs'))
 sign define Vu_error    text=!  texthl=Error
 sign define Vu_active   text=>  texthl=Comment
 sign define Vu_todate   text=.  texthl=Comment
-sign define Vu_updated  text=+  texthl=Comment
+sign define Vu_new      text=+  texthl=Comment
+sign define Vu_updated  text=*  texthl=Comment
 sign define Vu_deleted  text=-  texthl=Comment
 endif
 
 
 func! vundle#rc(...) abort
-  let g:bundle_dir = len(a:000) > 0 ? expand(a:1) : expand('$HOME/.vim/bundle')
+  let g:bundle_dir = len(a:000) > 0 ? expand(a:1, 1) : expand('$HOME/.vim/bundle', 1)
   let g:vundle_log = []
   call vundle#config#init()
 endf
