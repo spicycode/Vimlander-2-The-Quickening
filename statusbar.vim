@@ -8,6 +8,7 @@ if has("statusline") && !&cp
 
   " Add fugitive
   set statusline+=%{fugitive#statusline()}\ 
+  set statusline+=%{cfi#get_func_name()}\
 
   " Finish the statusline
   set statusline+=Line:%l/%L\ [%p%%]
