@@ -17,16 +17,10 @@ Bundle "pangloss/vim-javascript"
 Bundle "ervandew/supertab"
 Bundle "tyru/current-func-info.vim"
 Bundle "cespare/vim-bclose"
-Bundle "vim-scripts/L9"
 Bundle "vim-scripts/VimClojure"
 Bundle "ack.vim"
-Bundle "jade.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "wookiehangover/jshint.vim"
-Bundle "noahfrederick/Hemisu"
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'mrtazz/molokai.vim'
 Bundle 'Lokaltog/vim-powerline'
-
-" MatchTag
-Bundle 'gregsexton/MatchTag'
