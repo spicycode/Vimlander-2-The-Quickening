@@ -65,6 +65,7 @@ set wildignore+=*.o,*.a,*.so           " Ignore compiled binaries
 set wildignore+=*.jpg,*.png,*.gif      " Ignore images
 set wildignore+=*.pdf                  " Ignore PDF files
 set wildignore+=*.pyc,*.pyo            " Ignore compiled Python files
+set wildignore+=tmp                    " Ignore tmp directories
 
 " Search:
 
