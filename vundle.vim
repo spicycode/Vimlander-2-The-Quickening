@@ -23,3 +23,4 @@ Bundle "wookiehangover/jshint.vim"
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'mrtazz/molokai.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'juvenn/mustache.vim'

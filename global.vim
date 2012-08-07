@@ -33,6 +33,7 @@ set matchpairs+=<:>                     " Also match angle brackets
 " Mouse: 
 
 set mousehide                           " Hide mouse pointer on insert mode.
+set mouse=                             
 
 " Text:
 

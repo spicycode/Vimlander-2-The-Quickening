@@ -33,11 +33,14 @@ sign define Vu_todate   text=.  texthl=Comment
 sign define Vu_new      text=+  texthl=Comment
 sign define Vu_updated  text=*  texthl=Comment
 sign define Vu_deleted  text=-  texthl=Comment
+sign define Vu_helptags text=*  texthl=Comment
 endif
 
 
 func! vundle#rc(...) abort
   let g:bundle_dir = len(a:000) > 0 ? expand(a:1, 1) : expand('$HOME/.vim/bundle', 1)
+  let g:updated_bundles = []
   let g:vundle_log = []
+  let g:vundle_changelog = ['Updated Bundles:']
   call vundle#config#init()
 endf

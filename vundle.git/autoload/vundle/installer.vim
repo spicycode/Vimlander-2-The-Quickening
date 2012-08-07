@@ -29,6 +29,10 @@ func! s:process(bang, cmd)
       let msg = 'With errors; press l to view log'
     endif
 
+    if 'updated' == g:vundle_last_status && empty(msg)
+      let msg = 'Bundles updated; press u to view changelog'
+    endif
+
     " goto next one
     exec ':+1'
 
@@ -61,6 +65,8 @@ func! vundle#installer#run(func_name, name, ...) abort
     echo n.' already installed'
   elseif 'deleted' == status
     echo n.' deleted'
+  elseif 'helptags' == status
+    echo n.' regenerated'
   elseif 'error' == status
     echohl Error
     echo 'Error processing '.n
@@ -101,7 +107,7 @@ endf
 
 func! vundle#installer#docs() abort
   call vundle#installer#helptags(g:bundles)
-  return 'updated'
+  return 'helptags'
 endf
 
 func! vundle#installer#helptags(bundles) abort
@@ -198,7 +204,7 @@ endf
 
 func! s:sync(bang, bundle) abort
   let git_dir = expand(a:bundle.path().'/.git/', 1)
-  if isdirectory(git_dir)
+  if isdirectory(git_dir) || filereadable(expand(a:bundle.path().'/.git', 1))
     if !(a:bang) | return 'todate' | endif
     let cmd = 'cd '.shellescape(a:bundle.path()).' && git pull'
 
@@ -206,8 +212,12 @@ func! s:sync(bang, bundle) abort
       let cmd = substitute(cmd, '^cd ','cd /d ','')  " add /d switch to change drives
       let cmd = '"'.cmd.'"'                          " enclose in quotes
     endif
+
+    let get_current_sha = 'cd '.shellescape(a:bundle.path()).' && git rev-parse HEAD'
+    let initial_sha = s:system(get_current_sha)[0:15]
   else
     let cmd = 'git clone '.a:bundle.uri.' '.shellescape(a:bundle.path())
+    let initial_sha = ''
   endif
 
   let out = s:system(cmd)
@@ -220,12 +230,17 @@ func! s:sync(bang, bundle) abort
     return 'error'
   end
 
-  if out =~# 'Cloning into '
+  if empty(initial_sha)
     return 'new'
-  elseif out =~# 'up-to-date'
+  endif
+
+  let updated_sha = s:system(get_current_sha)[0:15]
+
+  if initial_sha == updated_sha
     return 'todate'
   endif
 
+  call add(g:updated_bundles, [initial_sha, updated_sha, a:bundle])
   return 'updated'
 endf
 
