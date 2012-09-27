@@ -18,9 +18,10 @@ Bundle "ervandew/supertab"
 Bundle "tyru/current-func-info.vim"
 Bundle "cespare/vim-bclose"
 Bundle "ack.vim"
-Bundle "kien/ctrlp.vim"
-Bundle "wookiehangover/jshint.vim"
+Bundle "L9"
+Bundle "FuzzyFinder"
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'mrtazz/molokai.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'juvenn/mustache.vim'
+Bundle 'tristen/superman'

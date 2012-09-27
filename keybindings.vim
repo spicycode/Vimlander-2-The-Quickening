@@ -15,6 +15,7 @@ map <leader>f :Ack<Space>
 " Close buffers
 nmap <leader>b :bd<CR>
 
-nmap <leader>lf :CtrlP<CR>
-nmap <leader>lb :CtrlPBuffer<CR>
-nmap <leader>lt :CtrlPTag<CR>
+nmap <leader>lf :FufFile<CR>
+nmap <leader>lc :FufCoverageFile<CR>
+nmap <leader>lb :FufBuffer<CR>
+nmap <leader>lt :FufTag<CR>

@@ -13,14 +13,6 @@ let vimclojure#HighlightBuiltins = 1
 let vimclojure#ParenRainbow = 1
 let vimclojure#DynamicHighlighting = 1
 
-" CtrlP
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*  " Linux/MacOSX
-
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\.git$\|\.hg$\|\.svn$',
-\ 'file': '\.exe$\|\.so$\|\.dll$'
-\ }
-
 " EasyMotion:
 let g:EasyMotion_do_mapping=0
 nnoremap <silent> <Leader>w       :call EasyMotionWB(0, 0)<CR>
@@ -31,3 +23,6 @@ nmap <Leader>x <Plug>Kwbd
 
 " Screen IMPL
 let g:ScreenImpl = 'Tmux'
+
+" FuzzyFinder
+let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|tmp|gitkeep|DS_Store)$|(app\/assets\/fonts|vendor\/cache|vendor\/gems)|(^|[/\\])\.(hg|git|bzr|bundle)($|[/\\])'
