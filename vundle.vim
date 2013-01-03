@@ -1,7 +1,9 @@
-set runtimepath+=~/.vim/vundle.git
+set runtimepath+=~/.vim/bundle/vundle/
+
 call vundle#rc()
 
 " Bundles:
+Bundle 'gmarik/vundle'
 Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-git"
@@ -15,7 +17,6 @@ Bundle "tpope/vim-commentary"
 Bundle "kchmck/vim-coffee-script"
 Bundle "pangloss/vim-javascript"
 Bundle "ervandew/supertab"
-Bundle "tyru/current-func-info.vim"
 Bundle "cespare/vim-bclose"
 Bundle "ack.vim"
 Bundle "L9"
@@ -25,3 +26,4 @@ Bundle 'mrtazz/molokai.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'juvenn/mustache.vim'
 Bundle 'tristen/superman'
+Bundle 'yaymukund/vim-rabl'

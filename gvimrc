@@ -1,8 +1,7 @@
 " Keybindings:
 source ~/.vim/keybindings.gui.vim
 
-" Font: Choose font and enable anti-aliasing
-set guifont=Monaco:h14
+" Font: Enable anti-aliasing
 set antialias
 
 " Maximize: Vert and Horiz by default
@@ -16,12 +15,10 @@ set guioptions-=m
 set guioptions-=rL
 
 " Native style tab labels (this ones for you larry)
-set guioptions+=e
+set guioptions-=e
 
 " Don't flick cursor.
 set guicursor=a:blinkon0
-
-colorscheme molokai
 
 if filereadable(expand("~/.vim/custom_gvimrc"))
   source ~/.vim/custom_gvimrc
