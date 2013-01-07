@@ -22,8 +22,6 @@ Bundle "ack.vim"
 Bundle "L9"
 Bundle "FuzzyFinder"
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'mrtazz/molokai.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'juvenn/mustache.vim'
-Bundle 'tristen/superman'
 Bundle 'yaymukund/vim-rabl'
