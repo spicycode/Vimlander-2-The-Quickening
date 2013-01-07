@@ -10,3 +10,6 @@ autocmd BufWritePre        {*.coffee,*.js}                                 :%s/\
 
 " Resize splits when the window is resized
 autocmd VimResized * exe "normal! \<c-w>="
+
+" Delete trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
