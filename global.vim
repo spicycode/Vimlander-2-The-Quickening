@@ -30,7 +30,7 @@ set infercase
 
 set matchpairs+=<:>                     " Also match angle brackets
 
-" Mouse: 
+" Mouse:
 
 set mousehide                           " Hide mouse pointer on insert mode.
 set mouse=a
@@ -49,7 +49,7 @@ set shiftwidth=2
 set shiftround
 
 set number                              " Enable line numbers
-set numberwidth=3                       " Set line number column width 
+set numberwidth=3                       " Set line number column width
 
 " WindowAndBufferManagement:
 
@@ -96,3 +96,6 @@ set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
 set t_Co=256
 
 set hidden
+
+" Show line wraps with fancy action
+set showbreak=↪

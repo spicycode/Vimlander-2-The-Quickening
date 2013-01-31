@@ -24,4 +24,4 @@ Bundle "FuzzyFinder"
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'juvenn/mustache.vim'
-Bundle 'yaymukund/vim-rabl'
+Bundle 'scrooloose/syntastic'
