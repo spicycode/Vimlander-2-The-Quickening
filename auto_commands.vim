@@ -4,6 +4,7 @@ autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                              
 autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                                       set ft=gitcommit
 autocmd BufRead,BufNewFile {*.clj,*.cljs}                                                         set ft=clojure
 autocmd BufRead,BufNewFile {*.json}                                                               set ft=javascript
+autocmd BufRead,BufNewFile {*.hbs}                                                                set ft=handlebars
 
 " Clear trailing whitespace
 autocmd BufWritePre        {*.coffee,*.js}                                 :%s/\s\+$//e
