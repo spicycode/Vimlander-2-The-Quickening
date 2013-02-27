@@ -18,11 +18,10 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "pangloss/vim-javascript"
 Bundle "ervandew/supertab"
 Bundle "cespare/vim-bclose"
-Bundle "ack.vim"
+Bundle "rking/ag.vim"
 Bundle "L9"
 Bundle "FuzzyFinder"
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'juvenn/mustache.vim'
-Bundle 'scrooloose/syntastic'
 Bundle 'rodjek/vim-puppet'

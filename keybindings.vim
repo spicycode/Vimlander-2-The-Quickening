@@ -7,10 +7,10 @@ nnoremap Y y$
 " TABS: Navigation
 nmap <leader>tp :tabprevious<CR>
 nmap <leader>tn :tabnext<CR>
-nmap <leader>te :tabedit 
+nmap <leader>te :tabedit
 
-" AckVim: <leader>f to search
-map <leader>f :Ack<Space>
+" Ag <leader>f to search
+map <leader>f :Ag<Space>
 
 " Close buffers
 nmap <leader>b :bd<CR>
