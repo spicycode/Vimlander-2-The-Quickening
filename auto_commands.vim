@@ -22,4 +22,4 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 " Delete trailing whitespace on save
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre {*.rb,*.js,*.coffee} :call <SID>StripTrailingWhitespaces()
