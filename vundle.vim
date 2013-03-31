@@ -5,6 +5,7 @@ call vundle#rc()
 " Bundles:
 Bundle 'gmarik/vundle'
 Bundle "vim-ruby/vim-ruby"
+Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-git"
 Bundle "tpope/vim-endwise"
