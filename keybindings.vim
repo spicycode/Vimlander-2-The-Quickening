@@ -13,7 +13,7 @@ nmap <leader>te :tabedit
 map <leader>f :Ag<Space>
 
 " Close buffers
-nmap <leader>b :bd<CR>
+" nmap <leader>b :bd<CR>
 
 nmap <leader>lf :FufFile<CR>
 nmap <leader>lc :FufCoverageFile<CR>

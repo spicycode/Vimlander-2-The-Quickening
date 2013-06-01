@@ -30,3 +30,10 @@ let g:fuf_buffertag_ctagsPath = '/opt/github/homebrew/bin/ctags'
 
 " NerdTree:
 let g:NERDTreeHijackNetrw=0
+
+" EasyTags:
+let g:easytags_cmd = '/opt/github/homebrew/bin/ctags'
+let g:easytags_dynamic_files = 1
+
+set tags=./.tags;,~/.vimtags
+
