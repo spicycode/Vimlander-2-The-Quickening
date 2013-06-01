@@ -31,8 +31,6 @@ Bundle 'nono/vim-handlebars'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'scrooloose/nerdtree'
-" LightTable esque Browser Connection!
-Bundle 'Bogdanp/browser-connect.vim'
 " Easier Tag Generation
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
