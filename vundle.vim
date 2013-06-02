@@ -34,3 +34,5 @@ Bundle 'scrooloose/nerdtree'
 " Easier Tag Generation
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
+
+Bundle 'wting/gitsessions.vim'
