@@ -31,8 +31,5 @@ Bundle 'nono/vim-handlebars'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'scrooloose/nerdtree'
-" Easier Tag Generation
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
-
 Bundle 'wting/gitsessions.vim'
+Bundle 'Shougo/unite.vim'
