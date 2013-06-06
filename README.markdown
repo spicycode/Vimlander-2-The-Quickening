@@ -7,6 +7,8 @@ VIM was reborn like unto the noble phoenix.  And so it was as it always should b
     ln -s ~/whereveryouputit ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim +BundleInstall +qall
 
 ## Per user config
 
