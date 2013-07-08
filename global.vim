@@ -99,3 +99,10 @@ set hidden
 
 " Show line wraps with fancy action
 set showbreak=↪
+
+
+function! s:BigHeadMode()
+  set guifont=Source\ Code\ Pro:h27
+endfunction
+command! BigHeadMode call <SID>BigHeadMode()
+
