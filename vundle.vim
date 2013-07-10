@@ -35,8 +35,6 @@ Bundle 'wting/gitsessions.vim'
 " Enable unite to run async
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/unite-outline'
 " Visual the undo tree
 Bundle 'sjl/gundo.vim'
-
-" TagBar 
-Bundle 'majutsushi/tagbar'
