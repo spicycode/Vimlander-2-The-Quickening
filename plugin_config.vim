@@ -28,11 +28,18 @@ let g:NERDTreeHijackNetrw=0
 
 " Unite:
 let g:unite_source_history_yank_enable = 1
+
+" sort file results by length
+call unite#custom#source('file_rec/async', 'sorters', 'sorter_length')
+call unite#custom_source('file_rec/async', 'ignore_pattern', '/\.(jpg|svg|gif|png)$/')
+
 " Default to the fuzzy matcher
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " Use ag for search
 if executable('ag')
+  let g:unite_source_rec_async_command = 'ag -l .'
+  
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
