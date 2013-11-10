@@ -32,3 +32,5 @@ let g:easytags_dynamic_files = 1
 
 set tags=./.tags;,~/.vimtags
 
+" GitGutter:
+let g:gitgutter_escape_grep = 1

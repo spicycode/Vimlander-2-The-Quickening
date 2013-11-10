@@ -19,7 +19,6 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'ervandew/supertab'
-Bundle 'cespare/vim-bclose'
 Bundle 'rking/ag.vim'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -31,12 +30,7 @@ Bundle 'nono/vim-handlebars'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'scrooloose/nerdtree'
-Bundle 'wting/gitsessions.vim'
-" Enable unite to run async
-Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/unite.vim'
 " Visual the undo tree
 Bundle 'sjl/gundo.vim'
-
-" TagBar 
-Bundle 'majutsushi/tagbar'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'noahfrederick/vim-hemisu'
