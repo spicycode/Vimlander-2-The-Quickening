@@ -8,14 +8,6 @@ let ruby_operators = 1
 " Turn off rails bits of statusbar
 let g:rails_statusline=0
 
-" VimClojure:
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#ParenRainbow = 1
-let vimclojure#DynamicHighlighting = 1
-
-" BClose
-nmap <Leader>x <Plug>Kwbd
-
 " Screen IMPL
 let g:ScreenImpl = 'Tmux'
 
@@ -26,7 +18,8 @@ let g:fuf_buffertag_ctagsPath = '/opt/github/homebrew/bin/ctags'
 " NerdTree:
 let g:NERDTreeHijackNetrw=0
 
-set tags=./.tags;,~/.vimtags
+set tags=./.tags;,./tags,~/.vimtags
 
 " GitGutter:
 let g:gitgutter_escape_grep = 1
+let g:gitgutter_realtime = 0
