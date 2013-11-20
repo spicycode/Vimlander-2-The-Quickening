@@ -18,7 +18,7 @@ let g:fuf_buffertag_ctagsPath = '/opt/github/homebrew/bin/ctags'
 " NerdTree:
 let g:NERDTreeHijackNetrw=0
 
-set tags=./.tags;,./tags,~/.vimtags
+set tags=./.tags;,./tags
 
 " GitGutter:
 let g:gitgutter_escape_grep = 1
