@@ -23,10 +23,6 @@ set nobackup                            " Do not create backup files when saving
 set nowritebackup                       " A little paranoid, but disable the writebackup function as well
 set noswapfile                          " No swap files when editing please
 
-" In Ruby, and some other languages as of Vim 7.3 foldmethod=syntax (the
-" default) makes autocompletion painfully slow.  Setting it to indent remedies
-" it.
-set foldmethod=indent
 set completeopt=menuone,preview
 
 " Ignore case on insert completion
