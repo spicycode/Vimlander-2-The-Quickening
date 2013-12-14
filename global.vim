@@ -23,6 +23,9 @@ set nobackup                            " Do not create backup files when saving
 set nowritebackup                       " A little paranoid, but disable the writebackup function as well
 set noswapfile                          " No swap files when editing please
 
+" We're on the fastest TTY ever
+set ttyfast
+
 set completeopt=menuone,preview
 
 " Ignore case on insert completion
