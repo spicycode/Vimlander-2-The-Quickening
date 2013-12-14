@@ -62,23 +62,14 @@ set splitright                          " Open new vertical split windows to the
 
 
 " WildMenuModeConfig:
-
-set wildmode=list:longest,full         " Better completion
-set wildignore=.svn,CVS,.git           " Ignore VCS files
-set wildignore+=*.o,*.a,*.so           " Ignore compiled binaries
-set wildignore+=*.jpg,*.png,*.gif      " Ignore images
-set wildignore+=*.pdf                  " Ignore PDF files
-set wildignore+=*.pyc,*.pyo            " Ignore compiled Python files
-set wildignore+=tmp                    " Ignore tmp directories
+" When more than one match, list all matches and complete first match.
+set wildmode=list:full    
 
 " Search:
-
 " show the `best match so far' as search strings are typed:
 set incsearch
-
 " Don't highlight search result.
 set nohlsearch
-
 " Searches wrap around the end of the file
 set wrapscan
 
