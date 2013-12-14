@@ -36,7 +36,7 @@ vmap <Left> <gv
 vmap <Right> >gv
 
 " Remap TAB to cycle completion
-imap <[Z> <C-P>
+imap <TAB> <C-P>
 " Remap Shift-TAB to reverse cycle completion
 map <Esc>[Z <s-tab>
 imap <s-tab> <C-N>
