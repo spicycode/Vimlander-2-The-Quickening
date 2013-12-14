@@ -13,6 +13,7 @@ Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
 Bundle 'kchmck/vim-coffee-script'
@@ -34,3 +35,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'noahfrederick/vim-hemisu'
+
+
+" See: https://github.com/codegram/vim-codereview
+Bundle 'junkblocker/patchreview-vim'
+Bundle 'codegram/vim-codereview'
