@@ -60,6 +60,8 @@ if has("mac")
 
   " Toggle NERDTreeToggle on f2
   nmap <silent> <special> <F2> :NERDTreeToggle<RETURN>
+  " Show current file in NERDTree on f3
+  nmap <silent> <special> <F3> :NERDTreeFind<RETURN>
 
   " " Unmap Apple+F so we can...
   macmenu Edit.Find.Find\.\.\. key=<nop>
