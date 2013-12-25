@@ -37,9 +37,25 @@ let g:unite_source_grep_command='ag'
 let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
 let g:unite_source_grep_recursive_opt=''
 
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+      \ 'ignore_pattern', join([
+      \ '\.git/',
+      \ '\.bundle/',
+      \ 'app/assets/images',
+      \ 'tmp/',
+      \ 'public/',
+      \ 'vendor/',
+      \ ], '\|'))
+
 function! s:unite_settings()
+  " Exit unite buffers with esc
   nmap <buffer> <esc> <plug>(unite_exit)
   imap <buffer> <esc> <plug>(unite_exit)
+
+  " Open in splits/vsplits/tabs
+  imap <silent><buffer><expr> <C-j> unite#do_action('split')
+  imap <silent><buffer><expr> <C-k> unite#do_action('vsplit')
+  imap <silent><buffer><expr> <C-l> unite#do_action('tabopen')
 endfunction
 autocmd FileType unite call s:unite_settings()
 
