@@ -30,3 +30,6 @@ nmap <leader>lt :Unite -auto-resize -buffer-name=tags tag<cr>
 
 " List sessions
 nmap <leader>ls :Unite -auto-resize -buffer-name=sessions session<cr> 
+
+" List yank (aka yank ring)
+nmap <leader>ly :Unite history/yank<cr>
