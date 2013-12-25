@@ -11,34 +11,13 @@ nmap <leader>te :tabedit
 
 " Ag <leader>f to search
 map <leader>f :Ag<Space>
+" map <leader>f :Unite -no-quit -buffer-name=search grep:.<cr>
 
 " Close buffers
 nmap <leader>b :bd<CR>
 
-nmap <leader>lf :FufFile<CR>
-nmap <leader>lc :FufCoverageFile<CR>
-nmap <leader>lb :FufBuffer<CR>
+nmap <leader>lf :Unite -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
+nmap <leader>lc :Unite -toggle -auto-resize -buffer-name=mixed file_rec/async buffer file_mru bookmark<cr><c-u>
+nmap <leader>lb :Unite -auto-resize -buffer-name=buffers buffer<cr>
 nmap <leader>lt :FufTag<CR>
 
-" Unimpaired: map up/down arrow keys to unimpaired commands
-" Move line up or down 
-nmap <Up> [e
-nmap <Down> ]e
-" Move selection up or down
-vmap <Up> [egv
-vmap <Down> ]egv
-
-" Indent/deindent line
-nmap <Left> <<
-nmap <Right> >>
-
-" Indent/deindent selection
-vmap <Left> <gv
-vmap <Right> >gv
-
-" Remap TAB to cycle completion
-imap <TAB> <C-P>
-
-" Remap Shift-TAB to reverse cycle completion
-map <Esc>[Z <s-tab>
-imap <s-tab> <C-N>

@@ -47,3 +47,5 @@ Bundle 'noahfrederick/vim-hemisu'
 
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
+
+Bundle 'ervandew/supertab'
