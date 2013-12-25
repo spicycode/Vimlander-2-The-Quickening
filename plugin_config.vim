@@ -20,3 +20,26 @@ let g:gitgutter_realtime = 0
 
 " Airline:
 let g:airline_powerline_fonts = 1
+
+" Unite:
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#set_profile('files', 'smartcase', 1)
+call unite#custom#source('line,outline','matchers','matcher_fuzzy')
+
+let g:unite_data_directory='~/.vim/.cache/unite'
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
+let g:unite_source_rec_max_cache_files=5000
+let g:unite_prompt='» '
+
+let g:unite_source_grep_command='ag'
+let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
+let g:unite_source_grep_recursive_opt=''
+
+function! s:unite_settings()
+  nmap <buffer> <esc> <plug>(unite_exit)
+  imap <buffer> <esc> <plug>(unite_exit)
+endfunction
+autocmd FileType unite call s:unite_settings()
+

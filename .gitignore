@@ -5,3 +5,4 @@ custom_vimrc
 custom_gvimrc
 bundle
 sessions
+.cache
