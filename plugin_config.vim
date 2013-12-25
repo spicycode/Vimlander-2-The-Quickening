@@ -12,9 +12,6 @@ let g:ScreenImpl = 'Tmux'
 let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|tmp|gitkeep|DS_Store)$|(app\/assets\/fonts|vendor\/cache|vendor\/gems)|(^|[/\\])\.(hg|git|bzr|bundle)($|[/\\])'
 let g:fuf_buffertag_ctagsPath = '/opt/github/homebrew/bin/ctags'
 
-" NerdTree:
-let g:NERDTreeHijackNetrw=0
-
 set tags=./.tags;,./tags
 
 " GitGutter:
