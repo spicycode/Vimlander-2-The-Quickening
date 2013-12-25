@@ -23,7 +23,6 @@ Bundle 'L9'
 Bundle 'tyru/current-func-info.vim'
 Bundle 'FuzzyFinder'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'juvenn/mustache.vim'
 Bundle 'rodjek/vim-puppet'
 Bundle 'nono/vim-handlebars'
@@ -36,6 +35,4 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'noahfrederick/vim-hemisu'
 
 
-" See: https://github.com/codegram/vim-codereview
-Bundle 'junkblocker/patchreview-vim'
-Bundle 'codegram/vim-codereview'
+Bundle 'bling/vim-airline'

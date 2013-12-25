@@ -1,6 +1,3 @@
-" Powerline:
-let g:Powerline_symbols = 'fancy'
-
 " RubyAndRails:
 " Highlight ruby operators
 let ruby_operators = 1
@@ -23,3 +20,6 @@ set tags=./.tags;,./tags
 " GitGutter:
 let g:gitgutter_escape_grep = 1
 let g:gitgutter_realtime = 0
+
+" Airline:
+let g:airline_powerline_fonts = 1

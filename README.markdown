@@ -2,6 +2,11 @@
 
 VIM was reborn like unto the noble phoenix.  And so it was as it always should be since the dawn of the end of times.
 
+## Get your powerline fonts
+Here: https://github.com/Lokaltog/powerline-fonts
+
+You'll want to install at least Source Code Pro for Powerline, as it's the default font.
+
 ## To install
 
     ln -s ~/whereveryouputit ~/.vim

@@ -112,7 +112,7 @@ set showbreak=↪
 
 
 function! s:BigHeadMode()
-  set guifont=Source\ Code\ Pro:h27
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h27
 endfunction
 command! BigHeadMode call <SID>BigHeadMode()
 
