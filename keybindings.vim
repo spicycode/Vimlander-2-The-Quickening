@@ -31,12 +31,14 @@ vmap <Down> ]egv
 " Indent/deindent line
 nmap <Left> <<
 nmap <Right> >>
+
 " Indent/deindent selection
 vmap <Left> <gv
 vmap <Right> >gv
 
 " Remap TAB to cycle completion
 imap <TAB> <C-P>
+
 " Remap Shift-TAB to reverse cycle completion
 map <Esc>[Z <s-tab>
 imap <s-tab> <C-N>

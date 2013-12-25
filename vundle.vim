@@ -16,7 +16,10 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
+
+" Try pressing - in a buffer
 Bundle 'tpope/vim-vinegar'
+
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
@@ -29,10 +32,17 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'nono/vim-handlebars'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'ck3g/vim-change-hash-syntax'
+
 " Visual the undo tree
 Bundle 'sjl/gundo.vim'
+
+" Show Git changes in the gutter
 Bundle 'airblade/vim-gitgutter'
+
+" StatusLine without the cruft
+Bundle 'bling/vim-airline'
+
+" I enjoy this color scheme
 Bundle 'noahfrederick/vim-hemisu'
 
-
-Bundle 'bling/vim-airline'
+Bundle 'Shougo/unite.vim'
