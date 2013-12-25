@@ -45,7 +45,10 @@ Bundle 'bling/vim-airline'
 " I enjoy this color scheme
 Bundle 'noahfrederick/vim-hemisu'
 
+" Unite!
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'tsukkee/unite-tag'
+Bundle 'tungd/unite-session'
 
 Bundle 'ervandew/supertab'
