@@ -77,7 +77,6 @@ set shiftround
 
 set number                              " Enable line numbers
 set numberwidth=3                       " Set line number column width
-set iskeyword-=_                        " Word breaks around underscores
 
 " WindowAndBufferManagement:
 
