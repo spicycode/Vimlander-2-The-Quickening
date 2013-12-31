@@ -84,15 +84,14 @@ set splitbelow                          " Open new horizontal split windows belo
 set splitright                          " Open new vertical split windows to the right
 "set switchbuf=useopen,usetab,split      " Don't change my current buffer on quickfix
 
-
 " Search:
+
 " show the `best match so far' as search strings are typed:
 set incsearch
 " Don't highlight search result.
 set nohlsearch
 " Searches wrap around the end of the file
 set wrapscan
-
 " assume the /g flag on :s substitutions to replace all matches in a line:
 set gdefault
 
@@ -118,3 +117,6 @@ command! BigHeadMode call <SID>BigHeadMode()
 
 " Help Program: Use vim help instead of language specific for shift-k
 set keywordprg=:help
+
+" Always show status bar
+set laststatus=2

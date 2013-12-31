@@ -12,7 +12,6 @@ autocmd BufWritePre        {*.coffee,*.js}                                 :%s/\
 " Resize splits when the window is resized
 autocmd VimResized * exe "normal! \<c-w>="
 
-
 " Strip trailing whitespace, and remember cursor position
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
