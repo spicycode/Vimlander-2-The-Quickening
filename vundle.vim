@@ -50,3 +50,5 @@ Bundle 'tsukkee/unite-tag'
 Bundle 'tungd/unite-session'
 
 Bundle 'ervandew/supertab'
+
+Bundle 'jaxbot/brolink.vim'
