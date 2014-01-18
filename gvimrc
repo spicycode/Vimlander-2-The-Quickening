@@ -14,7 +14,7 @@ set guioptions-=m
 " Scrollbar is always off.
 set guioptions-=rL
 
-" Native style tab labels (this ones for you larry)
+" Console Vim style tab labels
 set guioptions-=e
 
 " Don't flick cursor.

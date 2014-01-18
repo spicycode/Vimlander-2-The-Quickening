@@ -42,6 +42,7 @@ Bundle 'bling/vim-airline'
 
 " I enjoy this color scheme
 Bundle 'noahfrederick/vim-hemisu'
+Bundle 'chriskempson/base16-vim'
 
 " Unite!
 Bundle 'Shougo/vimproc.vim'

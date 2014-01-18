@@ -16,6 +16,10 @@ let g:gitgutter_realtime = 0
 
 " Airline:
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
+" Enable airline tabline
+let g:airline#extensions#tabline#enabled = 1
+
 
 " Unite:
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
