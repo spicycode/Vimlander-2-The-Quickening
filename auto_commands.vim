@@ -6,9 +6,6 @@ autocmd BufRead,BufNewFile {*.clj,*.cljs}                                       
 autocmd BufRead,BufNewFile {*.json}                                                               set ft=javascript
 autocmd BufRead,BufNewFile {*.hbs}                                                                set ft=handlebars
 
-" Clear trailing whitespace
-autocmd BufWritePre        {*.coffee,*.js}                                 :%s/\s\+$//e
-
 " Resize splits when the window is resized
 autocmd VimResized * exe "normal! \<c-w>="
 
