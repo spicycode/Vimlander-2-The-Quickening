@@ -120,8 +120,3 @@ set keywordprg=:help
 
 " Always show status bar
 set laststatus=2
-
-
-" Fold Methods:
-set foldmethod=syntax                               "fold via syntax of files
-set foldlevelstart=99                               "open all folds by default
