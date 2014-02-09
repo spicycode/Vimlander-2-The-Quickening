@@ -40,17 +40,14 @@ Bundle 'airblade/vim-gitgutter'
 " StatusLine without the cruft
 Bundle 'bling/vim-airline'
 
-" I enjoy this color scheme
+" I enjoy these color schemes
 Bundle 'noahfrederick/vim-hemisu'
 Bundle 'chriskempson/base16-vim'
 
-" Unite!
-Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/unite.vim'
-Bundle 'tsukkee/unite-tag'
-Bundle 'tungd/unite-session'
-
 Bundle 'ervandew/supertab'
 
-" Browserlink!
-Bundle 'jaxbot/brolink.vim'
+Bundle 'kien/ctrlp.vim'
+
+Bundle 'L9'
+Bundle 'tyru/current-func-info.vim'
+Bundle 'FuzzyFinder'

@@ -17,19 +17,17 @@ map <leader>f :Ag<Space>
 nmap <leader>b :bd<CR>
 
 " List everything (aka coverage mode)
-nmap <leader>lc :Unite -toggle -auto-resize -buffer-name=mixed file_rec/async buffer file_mru bookmark<cr><c-u>
-
-" List files 
-nmap <leader>lf :Unite -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
+nmap <leader>lc :CtrlP<CR>
+nmap <leader>lf :CtrlP<CR>
 
 " List buffers
-nmap <leader>lb :Unite -auto-resize -buffer-name=buffers buffer<cr>
+nmap <leader>lb :CtrlPBuffer<CR>
 
 " List tags
-nmap <leader>lt :Unite -auto-resize -buffer-name=tags tag<cr> 
+nmap <leader>lb :CtrlPTag<CR>
 
 " List sessions
-nmap <leader>ls :Unite -auto-resize -buffer-name=sessions session<cr> 
+" nmap <leader>ls :Unite -auto-resize -buffer-name=sessions session<cr> 
 
 " List yank (aka yank ring)
-nmap <leader>ly :Unite history/yank<cr>
+" nmap <leader>ly :Unite history/yank<cr>
