@@ -34,20 +34,20 @@ if has("mac")
   macmenu &File.New\ Tab key=<nop>
 
   " Change Apple+T to TextMate Like Fuzzy Finder
-  nnoremap <D-t> :Unite -toggle -auto-resize -buffer-name=files file_rec/async<cr><c-u>
+  nnoremap <D-t> :CtrlP<CR>
 
   " Unmap Apple+Shift+T so we can...
   macmenu &File.Open\ Tab\.\.\. key=<nop>
 
   " CommandShiftT: Fuzzy Find by Tag
-  nnoremap <D-T> :Unite -auto-resize -buffer-name=tags tag<cr> 
+  nnoremap <D-T> :CtrlPTag<CR>
 
   " Unmap Apple+b so we can...
   macmenu &Tools.Make key=<nop>
 
   " Change Apple+b to Emacseque buffer browser
-  map <D-b> :Unite -auto-resize -buffer-name=buffers buffer<cr>
-  imap <D-b> :Unite -auto-resize -buffer-name=buffers buffer<cr>
+  map <D-b> :CtrlPBuffer<CR>
+  imap <D-b> :CtrlPBuffer<CR>
 
   " Unmap Apple+S to remap to Esc, then :w<CR>
   macmenu &File.Save key=<nop>

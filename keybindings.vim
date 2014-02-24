@@ -11,7 +11,6 @@ nmap <leader>te :tabedit
 
 " Ag <leader>f to search
 map <leader>f :Ag<Space>
-" map <leader>f :Unite -no-quit -buffer-name=search grep:.<cr>
 
 " Close buffers
 nmap <leader>b :bd<CR>
@@ -24,10 +23,4 @@ nmap <leader>lf :CtrlP<CR>
 nmap <leader>lb :CtrlPBuffer<CR>
 
 " List tags
-nmap <leader>lb :CtrlPTag<CR>
-
-" List sessions
-" nmap <leader>ls :Unite -auto-resize -buffer-name=sessions session<cr> 
-
-" List yank (aka yank ring)
-" nmap <leader>ly :Unite history/yank<cr>
+nmap <leader>lt :CtrlPTag<CR>
