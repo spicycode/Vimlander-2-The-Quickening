@@ -1,6 +1,6 @@
 " OSX: Specific keybindings
 if has("mac")
-  
+
   " TABS: safari style tab navigation
   nmap <D-[> :tabprevious<CR>
   nmap <D-]> :tabnext<CR>
@@ -19,7 +19,7 @@ if has("mac")
   map <silent> <D-7> :tabn 7<CR>
   map <silent> <D-8> :tabn 8<CR>
   map <silent> <D-9> :tabn 9<CR>
-  
+
   " TextMateLikeIndent: bind command-] to shift right
   nmap <D-]> >>
   vmap <D-]> >>
@@ -57,9 +57,6 @@ if has("mac")
   " LeaveInsertMode: Alternate Key mappings
   inoremap <D-i> <Esc>
   nnoremap <D-i> <Esc>
-
-  " Toggle NERDTreeToggle on f2
-  nmap <silent> <special> <F2> :NERDTreeToggle<RETURN>
 
   " " Unmap Apple+F so we can...
   macmenu Edit.Find.Find\.\.\. key=<nop>

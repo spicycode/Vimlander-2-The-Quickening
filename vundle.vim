@@ -5,9 +5,6 @@ call vundle#rc()
 " Bundles:
 Bundle 'gmarik/vundle'
 
-Bundle 'FuzzyFinder'
-Bundle 'L9'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'

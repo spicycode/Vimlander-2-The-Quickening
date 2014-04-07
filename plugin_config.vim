@@ -1,6 +1,3 @@
-" Powerline:
-let g:Powerline_symbols = 'fancy'
-
 " RubyAndRails:
 " Highlight ruby operators
 let ruby_operators = 1
@@ -8,23 +5,20 @@ let ruby_operators = 1
 " Turn off rails bits of statusbar
 let g:rails_statusline=0
 
-" VimClojure:
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#ParenRainbow = 1
-let vimclojure#DynamicHighlighting = 1
-
-" BClose
-nmap <Leader>x <Plug>Kwbd
-
 " Screen IMPL
 let g:ScreenImpl = 'Tmux'
 
-" FuzzyFinder:
-let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|tmp|gitkeep|DS_Store)$|(app\/assets\/fonts|vendor\/cache|vendor\/gems)|(^|[/\\])\.(hg|git|bzr|bundle)($|[/\\])'
-let g:fuf_buffertag_ctagsPath = '/opt/github/homebrew/bin/ctags'
+set tags=./.tags;,./tags
 
-" NerdTree:
-let g:NERDTreeHijackNetrw=0
+" GitGutter:
+let g:gitgutter_escape_grep = 1
+let g:gitgutter_realtime = 0
+
+" Airline:
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
+" Enable airline tabline
+let g:airline#extensions#tabline#enabled = 0
 
 " Unite:
 let g:unite_source_history_yank_enable = 1
@@ -39,7 +33,7 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 " Use ag for search
 if executable('ag')
   let g:unite_source_rec_async_command = 'ag -l .'
-  
+
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''

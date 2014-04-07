@@ -7,7 +7,7 @@ nnoremap Y y$
 " TABS: Navigation
 nmap <leader>tp :tabprevious<CR>
 nmap <leader>tn :tabnext<CR>
-nmap <leader>te :tabedit 
+nmap <leader>te :tabedit
 
 " Ag <leader>f to search
 map <leader>f :Ag<Space>
@@ -15,11 +15,6 @@ map <leader>f :Ag<Space>
 " Close buffers
 nmap <leader>b :bd<CR>
 
-" nmap <leader>lf :FufFile<CR>
-" nmap <leader>lc :FufCoverageFile<CR>
-" nmap <leader>lb :FufBuffer<CR>
-" nmap <leader>lt :FufTag<CR>
-"
 nnoremap <leader>lc :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
 nnoremap <leader>lf :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
 nnoremap <leader>lr :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
