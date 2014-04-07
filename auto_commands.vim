@@ -2,7 +2,6 @@ autocmd BufRead,BufNewFile {Vagrantfile,Guardfile,Gemfile,Rakefile,Capfile,*.rak
 autocmd BufRead,BufNewFile {*.coffee.erb}                                                         set ft=coffee
 autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                                set ft=markdown
 autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                                       set ft=gitcommit
-autocmd BufRead,BufNewFile {*.clj,*.cljs}                                                         set ft=clojure
 autocmd BufRead,BufNewFile {*.json}                                                               set ft=javascript
 autocmd BufRead,BufNewFile {*.hbs}                                                                set ft=handlebars
 
@@ -11,7 +10,6 @@ autocmd BufWritePre        {*.coffee,*.js}                                 :%s/\
 
 " Resize splits when the window is resized
 autocmd VimResized * exe "normal! \<c-w>="
-
 
 " Strip trailing whitespace, and remember cursor position
 fun! <SID>StripTrailingWhitespaces()
