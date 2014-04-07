@@ -21,14 +21,30 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 0
 
 " Unite:
+let g:unite_winheight = 10
+
+let g:unite_enable_start_insert = 1
+
+let g:unite_enable_short_source_names = 1
+
 let g:unite_source_history_yank_enable = 1
 
-" sort file results by length
-call unite#custom#source('file_rec/async', 'sorters', 'sorter_length')
-call unite#custom_source('file_rec/async', 'ignore_pattern', '/\.(jpg|svg|gif|png)$/')
+" To track long mru history.
+let g:unite_source_file_mru_long_limit = 3000
+let g:unite_source_directory_mru_long_limit = 3000
+let g:unite_source_session_enable_auto_save = 1
 
 " Default to the fuzzy matcher
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+
+call unite#set_profile('files', 'ignorecase', 1)
+call unite#set_profile('buffer', 'ignorecase', 1)
+call unite#set_profile('tag', 'ignorecase', 1)
+
+" sort file results by length
+" call unite#custom_source('file_rec/async', 'sorters', 'sorter_length')
+" call unite#custom_source('file_rec/async', 'ignore_pattern', '/\.(jpg|svg|gif|png)$/')
 
 " Use ag for search
 if executable('ag')
