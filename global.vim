@@ -60,8 +60,6 @@ set completeopt=menuone,preview
 " When more than one match, list all matches and complete first match.
 set wildmode=list:full
 
-
-
 " Mouse:
 
 set mousehide                           " Hide mouse pointer on insert mode.
@@ -93,10 +91,13 @@ set splitright                          " Open new vertical split windows to the
 
 " show the `best match so far' as search strings are typed:
 set incsearch
+
 " Don't highlight search result.
 set nohlsearch
+
 " Searches wrap around the end of the file
 set wrapscan
+
 " assume the /g flag on :s substitutions to replace all matches in a line:
 set gdefault
 
