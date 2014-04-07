@@ -1,34 +1,66 @@
 " General Settings:
 
-scriptencoding utf-8                    " UTF8 All day, every day
-set directory=/tmp/                     " Set temporary directory (don't litter local dir with swp/tmp files)
-
-" Set it to internal VIM Help
-set keywordprg=:help
-
-if v:version >= 703
-  " Set undofile.
-  set undofile
-  let &undodir=&directory
-endif
-
-" Enable filetype-specific indenting, syntax, and plugins
-filetype plugin indent on
+" Vim not vi
 set nocompatible
+
+" We use UTF8 by default
+scriptencoding utf-8
+
+" Enable filetype-specific indenting and plugins
+filetype plugin indent on
+
+" Enable syntax
 syntax on
 
-set vb t_vb=                            " Disable visual bell
-set autoread                            " Set to auto read when a file is changed from the outside
-set nobackup                            " Do not create backup files when saving over existing files
-set nowritebackup                       " A little paranoid, but disable the writebackup function as well
-set noswapfile                          " No swap files when editing please
+" Put our temp files in /tmp
+set directory=/tmp/
 
-set completeopt=menuone,preview
+" Do not create backup files when saving over existing files
+set nobackup
+
+" A little paranoid, but disable the writebackup function as well
+set nowritebackup
+
+" No swap files when editing please
+set noswapfile
+
+" No visual bell
+set vb t_vb=
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" We're on the fastest TTY ever
+set ttyfast
+
+" Also match angle brackets
+set matchpairs+=<:>
+
+
+" Undo Configuration:
+
+" Enable undo file
+set undofile
+" Set undodir to tmp directory
+let &undodir=&directory
+
+" Tags:
+
+" Show extra information when using tags in insert mode
+set showfulltag
+
+
+" Completion:
 
 " Ignore case on insert completion
 set infercase
 
-set matchpairs+=<:>                     " Also match angle brackets
+set completeopt=menuone,preview
+
+" When more than one match, list all matches and complete first match.
+set wildmode=list:full
+
+
 
 " Mouse:
 
@@ -57,35 +89,16 @@ set splitbelow                          " Open new horizontal split windows belo
 set splitright                          " Open new vertical split windows to the right
 "set switchbuf=useopen,usetab,split      " Don't change my current buffer on quickfix
 
-
-" WildMenuModeConfig:
-
-set wildmode=list:longest,full         " Better completion
-set wildignore=.svn,CVS,.git           " Ignore VCS files
-set wildignore+=*.o,*.a,*.so           " Ignore compiled binaries
-set wildignore+=*.jpg,*.png,*.gif      " Ignore images
-set wildignore+=*.pdf                  " Ignore PDF files
-set wildignore+=*.pyc,*.pyo            " Ignore compiled Python files
-set wildignore+=tmp                    " Ignore tmp directories
-
 " Search:
 
 " show the `best match so far' as search strings are typed:
 set incsearch
-
 " Don't highlight search result.
 set nohlsearch
-
 " Searches wrap around the end of the file
 set wrapscan
-
 " assume the /g flag on :s substitutions to replace all matches in a line:
 set gdefault
-
-" Tags:
-
-" Show extra information when using tags in insert mode
-set showfulltag
 
 " Formatting:
 set fo-=o " Do not automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
@@ -95,6 +108,7 @@ set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
 " We use all the colors, all 256 of the possible colors in the universe
 set t_Co=256
 
+" Buffers become hidden when unloaded
 set hidden
 
 " Show line wraps with fancy action
@@ -102,7 +116,12 @@ set showbreak=↪
 
 
 function! s:BigHeadMode()
-  set guifont=Source\ Code\ Pro:h27
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h27
 endfunction
 command! BigHeadMode call <SID>BigHeadMode()
 
+" Help Program: Use vim help instead of language specific for shift-k
+set keywordprg=:help
+
+" Always show status bar
+set laststatus=2
