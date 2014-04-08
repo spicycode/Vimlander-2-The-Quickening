@@ -5,8 +5,10 @@ call vundle#rc()
 " Bundles:
 Bundle 'gmarik/vundle'
 
-Bundle 'Shougo/unite-outline'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/unite-outline'
+Bundle 'osyo-manga/unite-quickfix'
+Bundle 'tsukkee/unite-tag'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
