@@ -46,8 +46,8 @@ if has("mac")
   macmenu &Tools.Make key=<nop>
 
   " Change Apple+b to Emacseque buffer browser
-  map <D-b>:<C-u>Unite -no-split -profile-name=buffer buffer<cr>
-  imap <D-b>:<C-u>Unite -no-split -profile-name=buffer buffer<cr>
+  nnoremap <D-b> :<C-u>Unite -no-split -profile-name=buffer buffer<cr>
+  imap <D-b>: <C-u>Unite -no-split -profile-name=buffer buffer<cr>
 
   " Unmap Apple+S to remap to Esc, then :w<CR>
   macmenu &File.Save key=<nop>
