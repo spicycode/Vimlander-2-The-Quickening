@@ -58,9 +58,6 @@ endif
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-
   nmap <buffer> <ESC>      <Plug>(unite_exit)
 
   " Enable navigation with control-j and control-k in insert mode

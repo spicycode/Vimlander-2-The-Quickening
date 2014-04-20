@@ -39,3 +39,5 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'wting/gitsessions.vim'
 
 Bundle 'Valloric/YouCompleteMe'
+
+Bundle 'scrooloose/syntastic'
