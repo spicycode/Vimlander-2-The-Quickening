@@ -23,3 +23,13 @@ nnoremap <leader>lo :<C-u>Unite -no-split outline<cr>
 nnoremap <leader>ly :<C-u>Unite -no-split history/yank<cr>
 nnoremap <leader>lb :<C-u>Unite -no-split -profile-name=buffer buffer<cr>
 nnoremap <leader>lt :<C-u>Unite -no-split -profile-name=tag tag<cr>
+
+" In command-line mode, C-a jumps to beginning (to match C-e)
+cnoremap <C-a> <Home>
+
+" yank to system clipboard
+map <leader>y "*y
+
+" paste lines from unnamed register and fix indentation
+nmap <leader>p pV`]=
+nmap <leader>P PV`]=
