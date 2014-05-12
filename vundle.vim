@@ -40,8 +40,6 @@ Bundle 'wting/gitsessions.vim'
 
 Bundle 'Valloric/YouCompleteMe'
 
-Bundle 'scrooloose/syntastic'
-
 Bundle 'christoomey/vim-tmux-navigator'
 
-Bundle 'jaxbot/github-issues.vim'
+Bundle 'vadimr/bclose.vim'

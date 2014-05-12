@@ -13,6 +13,7 @@ nmap <leader>te :tabedit
 map <leader>f :Ag<Space>
 
 " Close buffers
+nmap <leader>q :Bclose<CR>
 nmap <leader>b :bd<CR>
 
 nnoremap <c-p> :<C-u>Unite -no-split -profile-name=files file_rec/async:!<cr>
@@ -33,3 +34,6 @@ map <leader>y "*y
 " paste lines from unnamed register and fix indentation
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
+
+" Apple+R to run spec in Dispatch
+nnoremap <leader>r :Dispatch<CR>
