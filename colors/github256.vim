@@ -1,83 +1,116 @@
-" Vim color file
-" Maintainer: Ricardo Valeriano <ricardo.valeriano@gmail.com>
-"     Based on the work by: Bruno Michel <bmichel@menfin.info>
-" Last Change: Mar, 01, 2012
-" Version: 0.2
-" Homepage: http://github.com/ricardovaleriano/vim-github-theme
-
-" This is a ViM's version of the github color theme.
+" Vim color file -- with 256 colour support!
+"
+" Author: Anthony Carapetis <anthony.carapetis@gmail.com>
+" Contributors: Lucas Tadeu <lucastadeuteixeira@gmail.com>
+"
+" Note: Based on github's syntax highlighting theme
+"       Used Brian Mock's darkspectrum as a starting point/template
+"       Thanks to Ryan Heath for an easy list of some of the colours:
+"       http://rpheath.com/posts/356-github-theme-for-syntax-gem
 
 set background=light
-highlight clear
-if exists("syntax_on")
-  syntax reset
+
+if version > 580
+    hi clear
+    if exists("syntax_on")
+        syntax reset
+    endif
 endif
 
-let g:colors_name = "github256"
-set t_Co=256
+let colors_name = "github"
 
-highlight Comment              guifg=#999988 ctermfg=102 gui=italic
+" {{{ General colors
+hi Normal   ctermfg=0   ctermbg=255  guifg=#000000   guibg=#F8F8FF
+hi Cursor   ctermfg=239   ctermbg=15  guifg=#F8F8FF   guibg=#444454
+hi Visual   ctermfg=15   ctermbg=61  guifg=#FFFFFF   guibg=#3465a3
+hi VisualNOS   ctermfg=15   ctermbg=24  guifg=#FFFFFF   guibg=#204a87
+hi Search   ctermfg=236   ctermbg=228  guifg=#000000   guibg=#FFFF8C  cterm=bold gui=bold
+hi Folded   ctermfg=8 ctermbg=15 guifg=#808080 guibg=#ECECEC gui=bold cterm=bold
+hi Title    ctermfg=167 guifg=#ef5939
+hi StatusLine ctermfg=238 ctermbg=250 guifg=#404040 guibg=#bbbbbb gui=bold cterm=bold
+hi StatusLineNC ctermfg=238 ctermbg=252 guifg=#404040 guibg=#d4d4d4 gui=italic cterm=italic
+hi VertSplit ctermfg=250 ctermbg=250 guifg=#bbbbbb guibg=#bbbbbb gui=none cterm=none
+hi LineNr   ctermfg=246 ctermbg=15 guifg=#959595 guibg=#ECECEC gui=bold cterm=bold
+hi SpecialKey ctermfg=6 guifg=#177F80 gui=italic cterm=italic
+hi WarningMsg ctermfg=167 guifg=#ef5939
+hi ErrorMsg ctermbg=15 ctermfg=196 guibg=#f8f8ff guifg=#ff1100 gui=undercurl cterm=undercurl
+hi ColorColumn ctermbg=254 guibg=#e4e4e4
+" }}}
 
-highlight Constant             guifg=#008080 ctermfg=30
-    highlight String           guifg=#dd1144 ctermfg=161
-    highlight Character        guifg=#dd1144 ctermfg=161
-    highlight Number           guifg=#009999 ctermfg=30
-    highlight Boolean          gui=bold cterm=bold
-    highlight Float            guifg=#009999 ctermfg=30
-    highlight RubySymbol       guifg=#990073 ctermfg=90
+" {{{ Vim => 7.0 specific colors
+if version >= 700
+    hi CursorLine ctermbg=253 guibg=#D8D8DD
+    hi MatchParen ctermfg=0 ctermbg=252 guifg=#000000 guibg=#cdcdfd
+    hi Pmenu        ctermfg=15 ctermbg=8 guifg=#ffffff guibg=#808080 gui=bold   cterm=bold
+    hi PmenuSel     ctermfg=0 ctermbg=252 guifg=#000000 guibg=#cdcdfd  gui=italic cterm=italic
+    hi PmenuSbar    ctermfg=238 ctermbg=0 guifg=#444444 guibg=#000000
+    hi PmenuThumb   ctermfg=248 ctermbg=248 guifg=#aaaaaa guibg=#aaaaaa
+endif
+" }}}
 
-highlight Identifier           guifg=#008080 ctermfg=30
-    highlight Function         guifg=#990000 ctermfg=88 gui=bold cterm=bold
+" {{{ Diff highlighting
+hi DiffAdd    ctermfg=233 ctermbg=194 guifg=#003300 guibg=#DDFFDD gui=none cterm=none
+hi DiffChange ctermbg=255  guibg=#ececec gui=none   cterm=none
+hi DiffText   ctermfg=233  ctermbg=189  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
+hi DiffDelete ctermfg=252 ctermbg=224   guifg=#DDCCCC guibg=#FFDDDD gui=none    cterm=none
+" }}}
 
-highlight Statement            guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Conditional      guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Repeat           guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Label            guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Operator         guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Keyword          guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Exception        guifg=#990000 ctermfg=88 gui=bold cterm=bold
+" {{{ Syntax highlighting
+hi Ignore   ctermfg=8 guifg=#808080
+hi Identifier   ctermfg=31 guifg=#0086B3
+hi PreProc  ctermfg=247 guifg=#A0A0A0 gui=bold cterm=bold
+hi Comment  ctermfg=246 guifg=#999988
+hi Constant ctermfg=6 guifg=#177F80 gui=none cterm=none
+hi String   ctermfg=161 guifg=#D81745
+hi Function ctermfg=88 guifg=#990000 gui=bold cterm=bold
+hi Statement    ctermfg=0 guifg=#000000 gui=bold cterm=bold
+hi Type     ctermfg=60 guifg=#445588 gui=bold   cterm=bold
+hi Number   ctermfg=30 guifg=#1C9898
+hi Todo     ctermfg=15 ctermbg=88 guifg=#FFFFFF guibg=#990000 gui=bold cterm=bold
+hi Special  ctermfg=28 guifg=#159828 gui=bold   cterm=bold
+hi Todo         ctermbg=15 ctermfg=196 guibg=#f8f8ff guifg=#ff1100 gui=underline cterm=underline
+hi Label        ctermfg=0 guifg=#000000 gui=bold    cterm=bold
+hi StorageClass ctermfg=0 guifg=#000000 gui=bold    cterm=bold
+hi Structure    ctermfg=0 guifg=#000000 gui=bold    cterm=bold
+hi TypeDef      ctermfg=0 guifg=#000000 gui=bold    cterm=bold
 
-highlight PreProc              guifg=#999999 ctermfg=102 gui=bold cterm=bold
-    highlight Include          guifg=#999999 ctermfg=102 gui=bold cterm=bold
-    highlight Define           guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Macro            guifg=#999999 ctermfg=102 gui=bold cterm=bold
-    highlight PreCondit        guifg=#999999 ctermfg=102 gui=bold cterm=bold
+" {{{ Links
+hi! link FoldColumn Folded
+hi! link CursorColumn   CursorLine
+hi! link NonText    LineNr
+" }}}
 
-highlight Type                 guifg=#445588 ctermfg=60 gui=bold cterm=bold
-    highlight StorageClass     guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Structure        guifg=#000000 ctermfg=16 gui=bold cterm=bold
-    highlight Typedef          guifg=#000000 ctermfg=16 gui=bold cterm=bold
+" {{{ Aliases
+hi link cppSTL          Function
+hi link cppSTLType      Type
+hi link Character       Number
+hi link htmlTag         htmlEndTag
+hi link htmlLink        Underlined
+hi link pythonFunction  Identifier
+hi link Question        Type
+hi link CursorIM        Cursor
+hi link VisualNOS       Visual
+hi link xmlTag          Identifier
+hi link xmlTagName      Identifier
+hi link shDeref         Identifier
+hi link shVariable      Function
+hi link rubySharpBang   Special
+hi link perlSharpBang   Special
+hi link schemeFunc      Statement
+" }}}
 
-highlight Special              guifg=#dd1144 ctermfg=161
-    highlight SpecialChar      guifg=#dd1144 ctermfg=161
-    highlight Tag              guifg=#000080 ctermfg=18
-    highlight Delimiter        guifg=#dd1144 ctermfg=161
-    highlight SpecialComment   guifg=#999999 ctermfg=102 gui=bold,italic cterm=bold,italic
-    highlight Debug            guifg=#aa0000 ctermfg=124
+" {{{ Tabs
+hi TabLine ctermfg=238 ctermbg=188 guifg=#404040 guibg=#dddddd gui=none
+hi TabLineFill ctermfg=238 ctermbg=188 guifg=#404040 guibg=#dddddd gui=none
+hi TabLineSel   ctermfg=238 guifg=#404040 gui=bold
+" }}}
 
-highlight Underlined           gui=underline cterm=underline
+" {{{ Spelling
+if has("spell")
+    hi spellBad     guisp=#fcaf3e
+    hi spellCap     guisp=#73d216
+    hi spellRare    guisp=#fcaf3e
+    hi spellLocal   guisp=#729fcf
+endif
+" }}}
 
-highlight Ignore               guifg=bg
-
-highlight Error                guifg=#a61717 ctermfg=124 guibg=#e3d2d2 ctermbg=188
-
-highlight Todo                 guifg=#999988 ctermfg=102 gui=italic cterm=italic
-
-highlight Cursor               guifg=NONE ctermfg=NONE guibg=#ff9900 ctermbg=227
-highlight CursorLine           guifg=NONE ctermfg=NONE guibg=#ffffcc ctermbg=230
-highlight Directory            guifg=#4183c4 ctermfg=68
-highlight DiffAdd              guifg=#000000 ctermfg=16 guibg=#ddffdd ctermbg=194
-highlight DiffDelete           guifg=#000000 ctermfg=16 guibg=#ffdddd ctermbg=224
-highlight DiffText             guibg=#666666 ctermbg=59
-highlight ErrorMsg             guifg=#a61717 ctermfg=124 guibg=#e3d2d2 ctermbg=188 gui=bold cterm=bold
-highlight VertSplit            guibg=#000000 guifg=#f8f8ff 
-highlight LineNr               guifg=#666666 ctermfg=59 guibg=#eaeaea ctermbg=188
-highlight ModeMsg              gui=bold cterm=bold
-highlight Normal               guifg=#000000 ctermfg=16 guibg=#f8f8ff ctermbg=231
-highlight Pmenu                guibg=#eaeaea guifg=#808088
-highlight StatusLine           guifg=#666666 ctermfg=59 guibg=#eaeaea ctermbg=188
-highlight Visual               guifg=NONE ctermfg=NONE guibg=#ffffcc ctermbg=230
-
-highlight TabLine gui=NONE guibg=#eaeaea guifg=#808080 
-highlight TabLineSel gui=bold guibg=#f8f8ff guifg=#000000 
-highlight TabLineFill gui=NONE guibg=#eaeaea
