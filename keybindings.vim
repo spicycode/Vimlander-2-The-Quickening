@@ -13,30 +13,27 @@ nmap <leader>te :tabedit
 map <leader>f :Ag<Space>
 
 " Close buffers
+nmap <leader>q :Bclose<CR>
 nmap <leader>b :bd<CR>
 
-nmap <leader>lf :FufFile<CR>
-nmap <leader>lc :FufCoverageFile<CR>
-nmap <leader>lb :FufBuffer<CR>
-nmap <leader>lt :FufTag<CR>
+nnoremap <c-p> :<C-u>Unite -no-split -profile-name=files file_rec/async:!<cr>
+nnoremap <leader>lc :<C-u>Unite -no-split -profile-name=files file_rec/async:!<cr>
+nnoremap <leader>lc :<C-u>Unite -no-split -profile-name=files file_rec/async:!<cr>
+nnoremap <leader>lf :<C-u>Unite -no-split -profile-name=files file<cr>
+nnoremap <leader>lo :<C-u>Unite -no-split outline<cr>
+nnoremap <leader>ly :<C-u>Unite -no-split history/yank<cr>
+nnoremap <leader>lb :<C-u>Unite -no-split -profile-name=buffer buffer<cr>
+nnoremap <leader>lt :<C-u>Unite -no-split -profile-name=tag tag<cr>
 
-" Unimpaired: map up/down arrow keys to unimpaired commands
-" Move line up or down 
-nmap <Up> [e
-nmap <Down> ]e
-" Move selection up or down
-vmap <Up> [egv
-vmap <Down> ]egv
+" In command-line mode, C-a jumps to beginning (to match C-e)
+cnoremap <C-a> <Home>
 
-" Indent/deindent line
-nmap <Left> <<
-nmap <Right> >>
-" Indent/deindent selection
-vmap <Left> <gv
-vmap <Right> >gv
+" yank to system clipboard
+map <leader>y "*y
 
-" Remap TAB to cycle completion
-imap <TAB> <C-P>
-" Remap Shift-TAB to reverse cycle completion
-map <Esc>[Z <s-tab>
-imap <s-tab> <C-N>
+" paste lines from unnamed register and fix indentation
+nmap <leader>p pV`]=
+nmap <leader>P PV`]=
+
+" Apple+R to run spec in Dispatch
+nnoremap <leader>r :Dispatch<CR>

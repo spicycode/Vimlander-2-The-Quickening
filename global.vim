@@ -16,13 +16,13 @@ syntax on
 set directory=/tmp/
 
 " Do not create backup files when saving over existing files
-set nobackup                            
+set nobackup
 
 " A little paranoid, but disable the writebackup function as well
-set nowritebackup                       
+set nowritebackup
 
 " No swap files when editing please
-set noswapfile                          
+set noswapfile
 
 " No visual bell
 set vb t_vb=
@@ -44,6 +44,10 @@ set undofile
 " Set undodir to tmp directory
 let &undodir=&directory
 
+" Tags:
+
+" Show extra information when using tags in insert mode
+set showfulltag
 
 " Completion:
 
@@ -54,8 +58,6 @@ set completeopt=menuone,preview
 
 " When more than one match, list all matches and complete first match.
 set wildmode=list:full    
-
-
 
 " Mouse:
 
@@ -84,7 +86,6 @@ set splitbelow                          " Open new horizontal split windows belo
 set splitright                          " Open new vertical split windows to the right
 "set switchbuf=useopen,usetab,split      " Don't change my current buffer on quickfix
 
-
 " Search:
 " show the `best match so far' as search strings are typed:
 set incsearch
@@ -112,9 +113,12 @@ set showbreak=↪
 
 
 function! s:BigHeadMode()
-  set guifont=Source\ Code\ Pro:h27
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h27
 endfunction
 command! BigHeadMode call <SID>BigHeadMode()
 
 " Help Program: Use vim help instead of language specific for shift-k
 set keywordprg=:help
+
+" Always show status bar
+set laststatus=2

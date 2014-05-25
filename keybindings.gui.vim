@@ -1,6 +1,6 @@
 " OSX: Specific keybindings
 if has("mac")
-  
+
   " TABS: safari style tab navigation
   nmap <D-[> :tabprevious<CR>
   nmap <D-]> :tabnext<CR>
@@ -19,7 +19,7 @@ if has("mac")
   map <silent> <D-7> :tabn 7<CR>
   map <silent> <D-8> :tabn 8<CR>
   map <silent> <D-9> :tabn 9<CR>
-  
+
   " TextMateLikeIndent: bind command-] to shift right
   nmap <D-]> >>
   vmap <D-]> >>
@@ -34,20 +34,20 @@ if has("mac")
   macmenu &File.New\ Tab key=<nop>
 
   " Change Apple+T to TextMate Like Fuzzy Finder
-  nnoremap <D-t> :FufCoverageFile<CR>
+  nnoremap <D-t> :<C-u>Unite -no-split -profile-name=files file_rec/async:!<cr>
 
   " Unmap Apple+Shift+T so we can...
   macmenu &File.Open\ Tab\.\.\. key=<nop>
 
   " CommandShiftT: Fuzzy Find by Tag
-  nnoremap <D-T> :FufTag!<CR>
+  nnoremap <D-T> :<C-u>Unite -no-split -profile-name=tag tag<cr>
 
   " Unmap Apple+b so we can...
   macmenu &Tools.Make key=<nop>
 
   " Change Apple+b to Emacseque buffer browser
-  map <D-b> :FufBuffer!<CR>
-  imap <D-b> :FufBuffer!<CR>
+  nnoremap <D-b> :<C-u>Unite -no-split -profile-name=buffer buffer<cr>
+  imap <D-b>: <C-u>Unite -no-split -profile-name=buffer buffer<cr>
 
   " Unmap Apple+S to remap to Esc, then :w<CR>
   macmenu &File.Save key=<nop>
@@ -58,15 +58,13 @@ if has("mac")
   inoremap <D-i> <Esc>
   nnoremap <D-i> <Esc>
 
-  " Toggle NERDTreeToggle on f2
-  nmap <silent> <special> <F2> :NERDTreeToggle<RETURN>
-  " Show current file in NERDTree on f3
-  nmap <silent> <special> <F3> :NERDTreeFind<RETURN>
-
   " " Unmap Apple+F so we can...
   macmenu Edit.Find.Find\.\.\. key=<nop>
 
   " Change Apple+F to /
   nnoremap <D-f> /
+
+  " Apple+R to run spec in Dispatch
+  nnoremap <D-r> :Dispatch rspec %<CR>
 
 endif
