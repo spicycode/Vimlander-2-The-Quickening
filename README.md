@@ -24,3 +24,9 @@ Then, sprinkle to taste with your defaults, undoing my craziness, etc.  These fi
 You will see errors, but this is just Vim complaining about not having the plugins it wants installed.   Simply run:
 
     :BundleInstall!
+
+## Who runs this?
+
+| [@spicycode](https://github.com/spicycode)  |
+|---|
+| ![@spicycode](https://avatars.githubusercontent.com/u/222?s=280) |
