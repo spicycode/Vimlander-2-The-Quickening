@@ -5,11 +5,15 @@ call vundle#rc()
 " Bundles:
 Bundle 'gmarik/vundle'
 
+" Unite and vimproc (for async)
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
+
+" Unite addons
 Bundle 'Shougo/unite-outline'
 Bundle 'osyo-manga/unite-quickfix'
 Bundle 'tsukkee/unite-tag'
-Bundle 'Shougo/vimproc.vim'
+
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'cakebaker/scss-syntax.vim'
