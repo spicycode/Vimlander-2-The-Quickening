@@ -42,7 +42,7 @@ Bundle 'tpope/vim-vinegar'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wting/gitsessions.vim'
 
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'Shougo/neocomplcache.vim'
 
 Bundle 'christoomey/vim-tmux-navigator'
 
