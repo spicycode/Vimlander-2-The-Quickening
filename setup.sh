@@ -6,5 +6,3 @@ ln -s ~/.vim/gvimrc ~/.gvimrc
 
 vim +BundleInstall +qall
 cd bundle/vimproc.vim/ && make && cd -
-echo "If YouCompleteMe fails to work, you likely need to 'brew unlink python'"
-cd bundle/YouCompleteMe/ && ./install.sh && cd -
