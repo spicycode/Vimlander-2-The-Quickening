@@ -18,7 +18,6 @@ nmap <leader>b :bd<CR>
 
 nnoremap <c-p> :<C-u>Unite -no-split -profile-name=files file_rec/async:!<cr>
 nnoremap <leader>lc :<C-u>Unite -no-split -profile-name=files file_rec/async:!<cr>
-nnoremap <leader>lc :<C-u>Unite -no-split -profile-name=files file_rec/async:!<cr>
 nnoremap <leader>lf :<C-u>Unite -no-split -profile-name=files file<cr>
 nnoremap <leader>lo :<C-u>Unite -no-split outline<cr>
 nnoremap <leader>ly :<C-u>Unite -no-split history/yank<cr>
