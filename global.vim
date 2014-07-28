@@ -111,12 +111,6 @@ set hidden
 " Show line wraps with fancy action
 set showbreak=↪
 
-
-function! s:BigHeadMode()
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h27
-endfunction
-command! BigHeadMode call <SID>BigHeadMode()
-
 " Help Program: Use vim help instead of language specific for shift-k
 set keywordprg=:help
 
