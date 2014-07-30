@@ -38,6 +38,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-rhubarb'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wting/gitsessions.vim'
 
