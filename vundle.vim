@@ -42,3 +42,6 @@ Bundle 'christoomey/vim-tmux-navigator'
 
 Bundle 'vadimr/bclose.vim'
 
+Bundle 'noahfrederick/vim-hemisu'
+
+
