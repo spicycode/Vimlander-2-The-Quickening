@@ -13,7 +13,6 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite-outline'
 Bundle 'osyo-manga/unite-quickfix'
 Bundle 'tsukkee/unite-tag'
-
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'cakebaker/scss-syntax.vim'
@@ -35,13 +34,9 @@ Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vinegar'
 Bundle 'vim-ruby/vim-ruby'
-
 Bundle 'Shougo/neocomplcache.vim'
-
 Bundle 'christoomey/vim-tmux-navigator'
-
 Bundle 'vadimr/bclose.vim'
-
 Bundle 'noahfrederick/vim-hemisu'
-
-
+Bundle 'ck3g/vim-change-hash-syntax'
+Bundle 'ngmy/vim-rubocop'
