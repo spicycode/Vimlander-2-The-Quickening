@@ -19,6 +19,7 @@ Bundle 'tpope/vim-dispatch'
 
 " Try pressing - in a buffer
 Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-clojure'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
